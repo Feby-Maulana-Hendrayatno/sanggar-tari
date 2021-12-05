@@ -20,7 +20,12 @@ class AkunController extends Controller
 
     public function tambah(Request $request)
     {
-        User::create($request->all());
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => bcrypt($request->password),
+            "id_role" => 1
+        ]);
 
         return redirect()->back();
     }
@@ -47,7 +52,7 @@ class AkunController extends Controller
         User::where("id", $request->id)->update([
             "name" => $request->name,
             "email" => $request->email,
-            "password" =>bcrypt($request->password),
+            "password" => bcrypt($request->password),
             "id_role" =>  $request->id_role,
 
         ]);

@@ -5,6 +5,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="POST" action="{{ url('/admin/users/tambah/') }}">
+            @csrf
             <div class="card card-info">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -50,7 +51,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <table class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th class="text-center">No</th>
@@ -60,33 +61,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tbody>
-							@php $no = 0 @endphp
-							@foreach($data_akun as $akun)
-							<tr>
-								<td>{{ ++$no }}</td>
-								<td>{{ $akun->name }}</td>
-								<td>{{ $akun->email }}</td>
-								<td>
-                                    <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
-                                        <span class="fa fa-edit"></span>
-                                    </a>
-                                    <form method="POST" action="{{ url('/admin/users/hapus') }}" style="display: inline;">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="id" value="{{ $akun->id }}">
-                                        <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
-                                            <span class="fa fa-trash"></span>
-                                        </button>
-                                    </form>
-                                </td>
-							</tr>
-							@endforeach
-						</tbody>
+                     @php $no = 0 @endphp
+                     @foreach($data_akun as $akun)
+                     <tr>
+                        <td>{{ ++$no }}</td>
+                        <td>{{ $akun->name }}</td>
+                        <td>{{ $akun->email }}</td>
+                        <td>
+                            <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
+                                <span class="fa fa-edit"></span>
+                            </a>
+                            <form method="POST" action="{{ url('/admin/users/hapus') }}" style="display: inline;">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $akun->id }}">
+                                <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
+                                    <span class="fa fa-trash"></span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                     </tbody>
-                </table>
-            </div>
+            </table>
         </div>
     </div>
+</div>
 </div>
 
 @endsection
