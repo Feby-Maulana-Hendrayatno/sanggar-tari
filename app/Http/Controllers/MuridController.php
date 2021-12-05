@@ -126,15 +126,9 @@ class MuridController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $data = Murid::where("id", $id)->first();
-
-        $nama_murid = $data->nama_murid;
-
-        Murid::where("id", $id)->delete();
-
-        User::where("name", $nama_murid)->delete();
+        Murid::where("id", $request->id)->delete();
 
         return redirect()->back();
     }

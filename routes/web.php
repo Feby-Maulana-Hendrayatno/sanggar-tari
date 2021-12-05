@@ -93,7 +93,7 @@ Route::prefix("admin")->group(function() {
         Route::post("/store", [MuridController::class, "store"]);
         Route::get("/tambah_data", [MuridController::class, "tambah_data"]);
         Route::get("/edit/{id}", [MuridController::class, "edit"]);
-        Route::get("/hapus/{id}/", [MuridController::class, "destroy"]);
+        Route::post("/hapus", [MuridController::class, "destroy"]);
         Route::post("/update", [MuridController::class, "update"]);
     });
 
