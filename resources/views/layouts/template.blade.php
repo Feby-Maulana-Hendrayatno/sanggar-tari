@@ -132,8 +132,9 @@
           <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
           <br>
+          <li class="nav-header">Dashboard</li>
           <li class="nav-item">
-            <a href="/admin" class="nav-link">
+            <a href="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -176,6 +177,12 @@
                   <p>Murid</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/kemampuan/') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kemampuan</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-header">Transaksi</li>
@@ -201,15 +208,6 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-header">Kategori Tari</li>
-          <li class="nav-item">
-            <a href="{{ url('/pelatih/kategori_tari') }}" class="nav-link">
-                <i class="fa fa-bars"></i>
-                <p>
-                    Jenis Tari
-                </p>
-              </a>
           </li>
           <li class="nav-header">Penilaian</li>
           <li class="nav-item">

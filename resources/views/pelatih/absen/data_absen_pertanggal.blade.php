@@ -96,7 +96,7 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">
-            <i class="fa fa-edit"></i> Absensi Tanggal : <b><?php echo date("d - m - Y") ?></b>
+            <i class="fa fa-edit"></i> Data Absen Keseluruhan
           </h3>
         </div>
         <div class="card-body">
@@ -104,7 +104,7 @@
             <thead>
               <tr>
                 <th class="text-center">No.</th>
-                <th class="text-center">Nama Murid</th>
+                <th>Nama Murid</th>
                 <th class="text-center">Status</th>
                 <th>Keterangan</th>
                 <th class="text-center">Aksi</th>
@@ -112,46 +112,10 @@
             </thead>
             <tbody>
               @php $no = 0 @endphp
-              @foreach($data_murid as $absen)
-              <?php
-              $sekarang = date("Y-m-d");
-              $data_murid = DB::table("absen")
-              ->where("id_absen", $absen->id)
-              ->where("tanggal", $sekarang)
-              ->first();
-              ?>
+              @foreach($data_absen as $absen)
               <tr>
                 <td class="text-center">{{ ++$no }}.</td>
-                <td class="text-center">{{ $absen->nama_murid }}</td>
-                <form method="POST" action="{{ url('/pelatih/absen/tambah_absen_hari_ini') }}">
-                  {{ csrf_field() }}
-                  <input type="hidden" name="id_murid" value="{{ $absen->id }}">
-                  <td class="text-center">
-                    <select class="form-control" name="status">
-                      <option value="">- Pilih -</option>
-                      <option value="1">Hadir</option>
-                      <option value="2">Sakit</option>
-                      <option value="3">Izin</option>
-                      <option value="4">Alfa</option>
-                    </select>
-                  </td>
-                  <td class="text-center">
-                    <input type="text" class="form-control" name="keterangan" placeholder="Masukkan Keterangan">
-                  </td>
-                  @if($data_murid)
-                  <td class="text-center">
-                    <button class="btn btn-success btn-sm" disabled>
-                      Sudah Absen
-                    </button>
-                  </td>
-                  @else
-                  <td class="text-center">
-                    <button type="submit" class="btn btn-success btn-sm">
-                      <i class="fa fa-plus"></i> Tambah
-                    </button>
-                  </td>
-                  @endif
-                </form>
+                <td>{{ $absen->getMurid->nama_murid }}</td>
               </tr>
               @endforeach
             </tbody>

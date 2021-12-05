@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Absen extends Model
+class Kemampuan extends Model
 {
-    protected $table = "absen";
+    use HasFactory;
+
+    protected $table = "kemampuan";
 
     protected $guarded = [''];
 
     public $timestamps = false;
-
-    public function getMurid(){
-        return $this->belongsTo("App\Models\Murid", "id_murid", "id" );
-    }
 }

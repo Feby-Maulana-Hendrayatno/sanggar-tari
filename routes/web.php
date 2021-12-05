@@ -12,6 +12,8 @@ use App\Http\Controllers\KategoriTariController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PelatihKategoriTariController;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\KemampuanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,16 +57,19 @@ Route::get('pelatih/addpelatih', function () {
 Route::get('/murid', function () {
     return view('/admin/murid');
 })->middleware('admin');
-
-
-
-
-
 // kalendar
 Route::get('full-calender', [FullCalenderController::class, 'index']);
 Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 
 Route::prefix("admin")->group(function() {
+
+    Route::prefix("kemampuan")->group(function() {
+        Route::get("/", [KemampuanController::class, "index"]);
+        Route::post("/tambah/", [KemampuanController::class, "tambah"]);
+        Route::post("/hapus", [KemampuanController::class, "hapus"]);
+        Route::get("/edit/{id_role}", [KemampuanController::class, "edit"]);
+        Route::post("/simpan", [KemampuanController::class, "simpan"]);
+    });
 
     Route::prefix("role")->group(function() {
         Route::get("/", [RoleController::class, "index"]);
@@ -120,6 +125,10 @@ Route::prefix("admin")->group(function() {
 
 Route::prefix("pelatih")->group(function() {
 
+    Route::get("/template_pelatih", [AppController::class, "template_pelatih"]);
+
+    Route::get("/dashboard", [AppController::class, "dashboard"]);
+
     Route::prefix("nilai")->group(function() {
         Route::get("/", [NilaiController::class, "index"]);
         Route::post("/tambah/", [NilaiController::class, "tambah"]);
@@ -129,15 +138,14 @@ Route::prefix("pelatih")->group(function() {
     });
 
     Route::prefix("absen")->group(function() {
-        Route::get("/", [AbsenController::class, "index"]);
-        Route::post("/tambah/", [AbsenController::class, "tambah"]);
+        Route::get("/hari_ini", [AbsenController::class, "hari_ini"]);
+        Route::post("/tambah_absen_hari_ini/", [AbsenController::class, "tambah_absen_hari_ini"]);
+
+        Route::get("/pertanggal", [AbsenController::class, "pertanggal"]);
+
         Route::post("/hapus", [AbsenController::class, "hapus"]);
         Route::get("/edit/{id}", [AbsenController::class, "edit"]);
         Route::post("/simpan", [AbsenController::class, "simpan"]);
     });
 
 });
-
-
-
-

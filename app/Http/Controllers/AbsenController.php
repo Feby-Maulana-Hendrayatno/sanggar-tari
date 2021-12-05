@@ -8,17 +8,17 @@ use App\Models\Murid;
 
 class AbsenController extends Controller
 {
-    public function index()
+    public function hari_ini()
     {
         $data = [
             "data_absen" => Absen::orderBy("id_absen", "ASC")->get(),
             "data_murid" => Murid::orderBy("nama_murid", "ASC")->get(),
         ];
 
-        return view("/pelatih/absen/da ta_absen", $data);
+        return view("/pelatih/absen/data_absen", $data);
     }
 
-    public function tambah(Request $request)
+    public function tambah_absen_hari_ini(Request $request)
     {
         
         if ($request->status_absen == 1) {
@@ -29,22 +29,26 @@ class AbsenController extends Controller
             $cetak = "Tidak ada";
         }
 
-        Absensi::create([
-            "id_users" => auth()->user()->id,
-            "tgl_absen" => $request->tgl_absen,
-            "status_absen" => $request->status_absen,
-            "keterangan" => $cetak,
-            "nim_anggota" => $request->nim_anggota
+        Absen::create([
+            "id_murid" => $request->id_murid,
+            "status" => $request->status,
+            "tanggal" => date("Y-m-d"),
+            "keterangan" => $request->keterangan,
+            "id_users" => auth()->user()->id
         ]);
 
-        return redirect()->back()->with("sukses", "Data Berhasil di Tambahkan");)
+        return redirect()->back()->with("sukses", "Data Berhasil di Tambahkan");
         
     }
 
+    public function pertanggal()
+    {
+        $data = [
+            "data_absen" => Absen::orderBy("id_murid", "DESC")->get()
+        ];
 
-
-
-
+        return view("pelatih/absen/data_absen_per_tanggal", $data);
+    }
 
     public function hapus(Request $request)
     {
