@@ -44,7 +44,6 @@
 							<tr>
 								<th class="text-center">No.</th>
 								<th>Nama</th>
-								<th class="text-center">Umur</th>
 								<th class="text-center">Jenis Kelamin</th>
 								<th>Alamat</th>
 								<th class="text-center">Aksi</th>
@@ -56,7 +55,6 @@
 							<tr>
 								<td class="text-center">{{ ++$no }}</td>
 								<td>{{ $dp->nama_murid }}</td>
-								<td class="text-center">{{ $dp->umur }}</td>
 								<td class="text-center">
 									@if($dp->jenis_kelamin == "L")
 										Laki - Laki
@@ -70,6 +68,9 @@
 								<td class="text-center">
 									<a href="/admin/murid/edit/{{ $dp->id }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
+									</a>
+									<a href="/admin/murid/detail/{{ $dp->id }}" class="btn btn-warning btn-sm">
+										<i class="fas fa-detail"></i> detail
 									</a>
 									<form method="POST" action="{{ url('/admin/murid/hapus') }}" class="d-inline">
 										@csrf

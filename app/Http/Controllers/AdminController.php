@@ -11,6 +11,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view("/admin/dashboard");
+        $data = [
+            "jumlah_pelatih" => Pelatih::count(),
+            "jumlah_murid"   => Murid::count(),
+            "jumlah_kategori_tari"  => KategoriTari::count()
+        ];
+        return view("/admin/dashboard" , $data);
     }
 }

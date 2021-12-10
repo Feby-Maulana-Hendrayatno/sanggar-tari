@@ -74,14 +74,25 @@ class MuridController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-{
-    $data = [
-        "edit" => Murid::where("id", $id)->first()
-    ];
+    {
+        $data = [
+            "edit" => Murid::where("id", $id)->first()
+            
+        ];
+        
+        return view("/admin/murid/edit_murid", $data);
+        
+    }
     
-    return view("/admin/murid/edit_murid", $data);
-    
-}
+    public function detail($id)
+    {
+        $data = [
+            "detail" => Murid::where("id", $id)->first()
+        ];
+        
+        return view("/admin/murid/detail_murid", $data);
+
+    }
 
     /**
      * Update the specified resource in storage.
@@ -119,6 +130,8 @@ class MuridController extends Controller
 
         return redirect("/admin/murid")->with("update", "Data Berhasil di update");
     }
+
+    
 
     /**
      * Remove the specified resource from storage.
