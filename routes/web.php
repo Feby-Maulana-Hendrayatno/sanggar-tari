@@ -58,8 +58,6 @@ Route::get('/murid', function () {
     return view('/admin/murid');
 })->middleware('admin');
 // kalendar
-Route::get('full-calender', [FullCalenderController::class, 'index']);
-Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 
 Route::prefix("admin")->group(function() {
 
@@ -69,6 +67,11 @@ Route::prefix("admin")->group(function() {
         Route::post("/hapus", [KemampuanController::class, "hapus"]);
         Route::get("/edit/{id_role}", [KemampuanController::class, "edit"]);
         Route::post("/simpan", [KemampuanController::class, "simpan"]);
+    });
+
+    Route::prefix("full-calender")->group(function() {
+        Route::get("/", [FullCalenderController::class, "index"]);
+        Route::post("/action", [FullCalenderController::class, "action"]);
     });
 
     Route::prefix("role")->group(function() {
@@ -84,6 +87,7 @@ Route::prefix("admin")->group(function() {
         Route::post("/store", [PelatihController::class, "store"]);
         Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
         Route::get("/edit/{id}", [PelatihController::class, "edit"]);
+        Route::get("/detail/{id}", [PelatihController::class, "detail"]);
         Route::get("/hapus/{id}/", [PelatihController::class, "destroy"]);
         Route::post("/update", [PelatihController::class, "update"]);
     });
@@ -121,7 +125,6 @@ Route::prefix("admin")->group(function() {
         Route::get("/edit/{id_pelatih_kategori}", [PelatihKategoriTariController::class, "edit"]);
         Route::post("/simpan", [PelatihKategoriTariController::class, "simpan"]);
     });
-
 });
 
 Route::prefix("pelatih")->group(function() {

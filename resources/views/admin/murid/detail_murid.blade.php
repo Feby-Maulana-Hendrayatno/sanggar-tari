@@ -11,7 +11,7 @@
 						<h3 class="card-title">
 							<span class="btn btn-secondary col fileinput-button dz-clickable">
                                 <i class="fa fa-reply"></i>
-								<span >Detail Murid</span>
+								<span> Kembali </span>
 							</span>
 						</h3>
 					</a>

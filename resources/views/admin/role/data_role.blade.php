@@ -1,5 +1,9 @@
 @extends("layouts.template")
 
+@section('title')
+  Data Role
+@stop
+
 @section("content")
 
 <div class="row">

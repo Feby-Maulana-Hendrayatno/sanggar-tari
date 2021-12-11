@@ -1,5 +1,9 @@
 @extends("layouts.template")
 
+@section('title')
+  Data Tingkat Kemampuan Murid 
+@stop
+
 @section("content")
 
 <div class="row">

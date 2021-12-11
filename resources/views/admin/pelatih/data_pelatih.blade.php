@@ -22,6 +22,10 @@
 	@endif
 @stop
 
+@section('title')
+  Data Pelatih
+@stop
+
 @section("content")
 
 <div class="container-fluid">
@@ -82,6 +86,9 @@
 									</a>
 									<a href="/admin/pelatih/hapus/{{ $dp->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">
 										<i class="fas fa-trash"></i> Hapus
+									</a>
+									<a href="/admin/pelatih/detail/{{ $dp->id }}" class="btn btn-blue btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">
+										<i class="fas fa-trash"></i> edit
 									</a>
 								</td>
 							</tr>

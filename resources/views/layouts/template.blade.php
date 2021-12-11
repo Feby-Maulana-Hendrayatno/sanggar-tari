@@ -32,6 +32,9 @@
   <!-- Select2 -->
   <link rel="stylesheet" href="{{ url('/template') }}/plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="{{ url('/template') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+  @yield("ajax_calendar_css")
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -186,7 +189,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/admin/kalendar/') }}" class="nav-link">
+            <a href="{{ url('/admin/full-calender/') }}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Event
@@ -242,8 +245,8 @@
     <div class="content-header">
       <div class="">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+          <div class="col-sm-6 ">
+            <h1 class="m-0 pl-4">  @yield("title")</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <!-- <ol class="breadcrumb float-sm-right">
@@ -345,5 +348,8 @@
     });
   });
 </script>
+
+@yield("ajax_calendar_js")
+
 </body>
 </html>

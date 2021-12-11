@@ -52,14 +52,33 @@ class PelatihController extends Controller
      */
     public function store(Request $request)
     {
-        Pelatih::create($request->all());
+    
+        $this-> message = [
+            'nama_pelstih.required' => 'wajib diisi!!',
+            'jenis_kelamin.required' => 'wajib diisi!!',
+            'no_hp.required' => 'wajib diisi!!',
+            'alamat.required' => 'wajib diisi!!',
+            'foto.required' => 'wajib diisi!!',
+        ];
 
+
+        $this->validate($request, [
+            'nama_pelatih' => 'required',
+            'jenis_kelamin' => 'required',
+            'no_hp' => 'required',
+            'alamat' => 'required',
+            'foto' => 'required',
+            ], $message);
+
+        Pelatih::create($request->all());
         User::create([
             "name" => $request->nama_pelatih,
             "email" => $request->nama_pelatih."@gmail.com",
             "password" => bcrypt("pelatih"),
             "id_role" => 1
         ]); 
+
+        
 
         return redirect("/admin/pelatih")->with("tambah", "Data Berhasil di Tambahkan");
     }
@@ -74,10 +93,7 @@ class PelatihController extends Controller
     {
         $data = [
             "edit" => Pelatih::where("id", $id)->first()
-        ];
-
-        
-
+        ];        
         return view("/admin/pelatih/edit_pelatih", $data);
 
     }

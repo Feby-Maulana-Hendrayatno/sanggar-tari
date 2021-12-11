@@ -10,7 +10,7 @@
                     <h3 class="card-title">
                         <span class="btn btn-secondary col fileinput-button dz-clickable">
                             <i class="fa fa-reply"></i>
-                            <span >Data Pelatih</span>
+                            <span >Kembali</span>
                         </span>
                     </h3>
                 </a>
@@ -21,29 +21,59 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nama Pelatih</label>
-                            <input type="text" name="nama_pelatih" class="form-control" id="" placeholder="Masukan Nama" required>
+                            <input type="text" name="nama_pelatih" class="form-control" id="" placeholder="Masukan Nama">
+                            <div class="text-danger">
+                            <!-- @error('nama_pelatih')
+                                {{ $message }}
+                            @enderror -->
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Jenis Kelamin&nbsp;
-                                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
                             </label>
+                            <div class="text-danger">
+                            @error('jenis_kelamin')
+                            {{ $message }}
+                            @enderror
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Jenis Tari</label>
                             <input type="" name="jenis_tari" class="form-control" id="" placeholder="Jenis Tari yang Dikuasai">
+                            <div class="text-danger">
+                            @error('jenis_tari')
+                            {{ $message }}
+                            @enderror
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Nomer Handphone</label>
                             <input type="text" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone">
+                            <div class="text-danger">
+                            @error('no_hp')
+                            {{ $message }}
+                            @enderror
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat">
+                            <div class="text-danger">
+                            @error('alamat')
+                            {{ $message }}
+                            @enderror
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Foto Pelatih</label>
                             <input type="file"  name="foto" class="form-control" id="" placeholder="Masukan Foto/Gambar">
+                            <div class="text-danger">
+                            @error('foto_pelatih')
+                            {{ $message }}
+                            @enderror
+                            </div>
                         </div>
                         <br>
                         <div>

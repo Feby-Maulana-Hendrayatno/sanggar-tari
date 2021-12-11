@@ -47,10 +47,6 @@
       </div>
     </div>
   </div>
-  <!-- /.row -->
-  <!-- Main row -->
-  <div class="row"></div>
-  <!-- /.row (main row) -->
-</div><!-- /.container-fluid -->
+</div>
 
 @stop

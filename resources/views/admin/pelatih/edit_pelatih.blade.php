@@ -28,15 +28,15 @@
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <br>
-                                @if($edit->jenis_kelamin == "Laki-laki")
-                                <input type="radio" name="jenis_kelamin" value="Laki-laki" checked> Laki-laki
-                                <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+                                @if($edit->jenis_kelamin == "L")
+                                <input type="radio" name="jenis_kelamin" value="L" checked> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
                                 @elseif($edit->jenis_kelamin == "Perempuan")
-                                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
-                                <input type="radio" name="jenis_kelamin" value="Perempuan" checked> Perempuan
+                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P" checked> Perempuan
                                 @else
-                                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
-                                <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
                                 @endif
                             </div>
                             <div class="form-group">

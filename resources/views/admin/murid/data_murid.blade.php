@@ -21,6 +21,9 @@
 	@endif
 @stop
 
+@section('title')
+  Data Murid
+@stop
 
 @section("content")
 
