@@ -17,6 +17,7 @@ class CreatePelatihTable extends Migration
             $table->id();
             $table->string("nama_pelatih", 100)->nullable();
             $table->enum("jenis_kelamin", ["L", "P"]);
+            $table->integer("umur")->nullable();
             $table->string("no_hp", 50)->nullable();
             $table->text("alamat")->nullable();
             $table->string("foto")->nullable();

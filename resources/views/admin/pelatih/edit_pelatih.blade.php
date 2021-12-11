@@ -40,20 +40,20 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Jenis Tari</label>
-                                <input type="" name="jenis_tari" class="form-control" id="" placeholder="Jenis Tari yang Dikuasai" value="{{ $edit->jenis_tari }}">
+                                <label>Umur</label>
+                                <input type="number" name="umur" class="form-control" id="" placeholder="Umur Pelatih" value="{{ $edit->umur }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Nomer Handphone</label>
-                                <input type="" name="no_hp" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->no_hp }}">
+                                <input type="" name="no_hp" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->no_hp }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}">
+                                <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}" required>
                             </div>
                             <div class="form-group">
                                 <label for=""> Gambar </label> <br>
-                                <img src="/image/{{ $edit->foto }}" width="300">
+                                <img src="/image/{{ $edit->foto }}" width="300" required>
                             </div>
                             <div class="form-group">
                                 <label>Foto Pelatih</label>

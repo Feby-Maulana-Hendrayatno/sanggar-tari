@@ -68,12 +68,12 @@
 									@endif
 								</td>
 								<td>{{ $dp->alamat }}</td>
-								<td class="text-center">
+								<td class="text-center">	
+									<a href="/admin/murid/detail/{{ $dp->id }}" class="btn btn-success text-white btn-sm">
+										<i class="fas fa-clipboard"></i> detail
+									</a>
 									<a href="/admin/murid/edit/{{ $dp->id }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
-									</a>
-									<a href="/admin/murid/detail/{{ $dp->id }}" class="btn btn-warning btn-sm">
-										<i class="fas fa-detail"></i> detail
 									</a>
 									<form method="POST" action="{{ url('/admin/murid/hapus') }}" class="d-inline">
 										@csrf

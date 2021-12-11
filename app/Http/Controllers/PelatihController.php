@@ -53,22 +53,22 @@ class PelatihController extends Controller
     public function store(Request $request)
     {
     
-        $this-> message = [
-            'nama_pelstih.required' => 'wajib diisi!!',
-            'jenis_kelamin.required' => 'wajib diisi!!',
-            'no_hp.required' => 'wajib diisi!!',
-            'alamat.required' => 'wajib diisi!!',
-            'foto.required' => 'wajib diisi!!',
-        ];
+        // $this-> message = [
+        //     'nama_pelstih.required' => 'wajib diisi!!',
+        //     'jenis_kelamin.required' => 'wajib diisi!!',
+        //     'no_hp.required' => 'wajib diisi!!',
+        //     'alamat.required' => 'wajib diisi!!',
+        //     'foto.required' => 'wajib diisi!!',
+        // ];
 
 
-        $this->validate($request, [
-            'nama_pelatih' => 'required',
-            'jenis_kelamin' => 'required',
-            'no_hp' => 'required',
-            'alamat' => 'required',
-            'foto' => 'required',
-            ], $message);
+        // $this->validate($request, [
+        //     'nama_pelatih' => 'required',
+        //     'jenis_kelamin' => 'required',
+        //     'no_hp' => 'required',
+        //     'alamat' => 'required',
+        //     'foto' => 'required',
+        //     ], $message);
 
         Pelatih::create($request->all());
         User::create([
@@ -98,6 +98,16 @@ class PelatihController extends Controller
 
     }
 
+    public function detail($id)
+    {
+        $data = [
+            "detail" => Pelatih::where("id", $id)->first()
+        ];
+        
+        return view("/admin/pelatih/detail_pelatih", $data);
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -110,8 +120,8 @@ class PelatihController extends Controller
         $update = Pelatih::where("id", $request->id)->first();
 
         $update->nama_pelatih = $request->nama_pelatih;
-        $update->jenis_kelamin = $request->jenis_kelamin;   
-        $update->jenis_tari = $request->jenis_tari;
+        $update->jenis_kelamin = $request->jenis_kelamin;
+        $update->umur = $request->umur;
         $update->no_hp = $request->no_hp;
         $update->alamat = $request->alamat;
 

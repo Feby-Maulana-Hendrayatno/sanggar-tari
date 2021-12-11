@@ -30,21 +30,21 @@
               </div>
               <div class="form-group">
                 <label>Jenis Kelamin&nbsp;
-                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki &nbsp;&nbsp;&nbsp;
-                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                <input type="radio" name="jenis_kelamin" value="L" required> Laki-laki &nbsp;&nbsp;&nbsp;
+                <input type="radio" name="jenis_kelamin" value="P" required> Perempuan
                 </label>
               </div>
               <div class="form-group">
                 <label>No HP</label>
-                <input type="text" name="no_hp" class="form-control" id="" placeholder="Nomor Handphone">
+                <input type="text" name="no_hp" class="form-control" id="" placeholder="Nomor Handphone" required>
               </div>
               <div class="form-group">
                 <label>Alamat</label>
-                <input type="" name="alamat" class="form-control" id="" placeholder="Alamat Murid">
+                <input type="" name="alamat" class="form-control" id="" placeholder="Alamat Murid" required>
               </div>
               <div class="form-group">
                 <label>Foto</label>
-                <input type="file" class="form-control" name="foto" id="" placeholder="Masukan Foto/Gambar">
+                <input type="file" class="form-control" name="foto" id="" placeholder="Masukan Foto/Gambar" required>
               </div>
               <br>
               <div>

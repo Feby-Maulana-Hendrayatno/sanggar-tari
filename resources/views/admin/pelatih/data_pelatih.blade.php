@@ -81,14 +81,14 @@
 								</td>
 								<td class="text-center">{{ $dp->no_hp }}</td>
 								<td class="text-center">
+									<a href="/admin/pelatih/detail/{{ $dp->id }}" class="btn btn-success text-white btn-sm">
+										<i class="fas fa-clipboard"></i> Detail
+									</a>
 									<a href="/admin/pelatih/edit/{{ $dp->id }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
 									</a>
 									<a href="/admin/pelatih/hapus/{{ $dp->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">
 										<i class="fas fa-trash"></i> Hapus
-									</a>
-									<a href="/admin/pelatih/detail/{{ $dp->id }}" class="btn btn-blue btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">
-										<i class="fas fa-trash"></i> edit
 									</a>
 								</td>
 							</tr>

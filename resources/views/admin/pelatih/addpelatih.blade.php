@@ -21,58 +21,53 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nama Pelatih</label>
-                            <input type="text" name="nama_pelatih" class="form-control" id="" placeholder="Masukan Nama">
+                            <input type="text" name="nama_pelatih" class="form-control" id="" placeholder="Masukan Nama" required>
                             <div class="text-danger">
                             <!-- @error('nama_pelatih')
                                 {{ $message }}
                             @enderror -->
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label>Jenis Kelamin&nbsp;
-                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                                <input type="radio" name="jenis_kelamin" value="L" required> Laki-laki &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="jenis_kelamin" value="P" required> Perempuan
                             </label>
                             <div class="text-danger">
-                            @error('jenis_kelamin')
+                            <!-- @error('jenis_kelamin')
                             {{ $message }}
-                            @enderror
+                            @enderror -->
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Jenis Tari</label>
-                            <input type="" name="jenis_tari" class="form-control" id="" placeholder="Jenis Tari yang Dikuasai">
-                            <div class="text-danger">
-                            @error('jenis_tari')
-                            {{ $message }}
-                            @enderror
-                            </div>
+                            <label>Umur</label>
+                            <input type="number" name="umur" class="form-control" id="" placeholder="Umur Pelatih" required>
                         </div>
                         <div class="form-group">
                             <label>Nomer Handphone</label>
-                            <input type="text" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone">
+                            <input type="text" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone" required>
                             <div class="text-danger">
-                            @error('no_hp')
+                            <!-- @error('no_hp')
                             {{ $message }}
-                            @enderror
+                            @enderror -->
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat">
+                            <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" required>
                             <div class="text-danger">
-                            @error('alamat')
+                            <!-- @error('alamat')
                             {{ $message }}
-                            @enderror
+                            @enderror -->
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Foto Pelatih</label>
-                            <input type="file"  name="foto" class="form-control" id="" placeholder="Masukan Foto/Gambar">
+                            <input type="file"  name="foto" class="form-control" id="" placeholder="Masukan Foto/Gambar" required>
                             <div class="text-danger">
-                            @error('foto_pelatih')
+                            <!-- @error('foto_pelatih')
                             {{ $message }}
-                            @enderror
+                            @enderror -->
                             </div>
                         </div>
                         <br>

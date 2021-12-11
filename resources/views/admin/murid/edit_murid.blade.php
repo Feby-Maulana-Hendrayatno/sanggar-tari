@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('/admin/murid/update/')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <input type="hidden" name="id" value="{{ $edit->id }}">
+                        <input type="hidden" name="id" value="{{ $edit->id }}" >
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama Murid</label>
@@ -45,19 +45,19 @@
                             </div>
                             <div class="form-group">
                                 <label>Nomer Handphone</label>
-                                <input type="" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone" value="{{ $edit->no_hp }}">
+                                <input type="" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone" value="{{ $edit->no_hp }} " required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}">
+                                <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}" required>
                             </div>
                             <div class="form-group">
                                 <label for=""> Foto </label> <br>
-                                <img src="/image/{{ $edit->foto }}" width="300">
+                                <img src="/image/{{ $edit->foto }}" width="300" required>
                             </div>
                             <div class="form-group">
                                 <label>Foto Murid</label>
-                                <input type="file" class="form-control" name="foto" id="" placeholder="Masukan Foto/Gambar">
+                                <input type="file" class="form-control" name="foto" id="" placeholder="Masukan Foto/Gambar" value="{{ $edit->foto }}" >
                             </div>
                             <br>
                             <div>
