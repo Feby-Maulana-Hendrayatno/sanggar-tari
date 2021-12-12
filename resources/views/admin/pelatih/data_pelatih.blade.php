@@ -1,5 +1,25 @@
 @extends("layouts.template")
 
+@section("header")
+
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0"> Pelatih </h1>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/admin/dashboard') }}"> Dashboard </a>
+                </li>
+                <li class="breadcrumb-item active"> Data Pelatih </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+@endsection
+
 @section("alerts")
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

@@ -37,7 +37,7 @@
           <br>
           <li class="nav-header">Dashboard</li>
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="/admin/dashboard" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
