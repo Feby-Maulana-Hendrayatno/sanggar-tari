@@ -116,7 +116,7 @@
               <?php
               $sekarang = date("Y-m-d");
               $data_murid = DB::table("absen")
-              ->where("id_absen", $absen->id)
+              ->where("id_murid", $absen->id)
               ->where("tanggal", $sekarang)
               ->first();
               ?>

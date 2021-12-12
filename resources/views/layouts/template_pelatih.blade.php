@@ -49,7 +49,11 @@
 
   <!-- jQuery -->
   
+  @yield("scripts_js")
+  
   @include("layouts.partials_pelatih.js.style_js")
+
+
 
 </body>
 </html>
