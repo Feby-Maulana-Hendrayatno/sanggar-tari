@@ -131,6 +131,7 @@ Route::prefix("pelatih")->group(function() {
 
     Route::get("/template_pelatih", [AppController::class, "template_pelatih"]);
 
+    Route::get("/", [AppController::class, "dashboard"]);
     Route::get("/dashboard", [AppController::class, "dashboard"]);
 
     Route::prefix("nilai")->group(function() {
@@ -146,6 +147,9 @@ Route::prefix("pelatih")->group(function() {
         Route::post("/tambah_absen_hari_ini/", [AbsenController::class, "tambah_absen_hari_ini"]);
 
         Route::get("/pertanggal", [AbsenController::class, "pertanggal"]);
+        Route::post("/tambah_absen_pertanggal", [AbsenController::class, "tambah_absen_pertanggal"]);
+        Route::get("/edit_absen", [AbsenController::class, "edit_absen"]);
+        Route::post("/simpan_data_edit_absen", [AbsenController::class, "simpan_data_edit_absen"]);
 
         Route::post("/hapus", [AbsenController::class, "hapus"]);
         Route::get("/edit/{id}", [AbsenController::class, "edit"]);

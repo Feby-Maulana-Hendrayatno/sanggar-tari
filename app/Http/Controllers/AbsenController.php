@@ -11,8 +11,8 @@ class AbsenController extends Controller
     public function hari_ini()
     {
         $data = [
-            "data_absen" => Absen::orderBy("id_absen", "ASC")->get(),
-            "data_murid" => Murid::orderBy("nama_murid", "ASC")->get(),
+            "data_absen" => Absen::orderBy("id_absen", "DESC")->get(),
+            "data_murid" => Murid::orderBy("nama_murid", "DESC")->get(),
         ];
 
         return view("/pelatih/absen/data_absen", $data);
@@ -21,9 +21,9 @@ class AbsenController extends Controller
     public function tambah_absen_hari_ini(Request $request)
     {
         
-        if ($request->status_absen == 1) {
+        if ($request->status == 1) {
             $cetak = "Hadir";
-        } else if ($request->status_absen == 2 || $request->status_absen == 3 || $request->status_absen == 3 || $request->status_absen == 4) {
+        } else if ($request->status == 2 || $request->status == 3 || $request->status == 3 || $request->status == 4) {
             $cetak = $request->keterangan;
         } else {
             $cetak = "Tidak ada";
@@ -33,7 +33,7 @@ class AbsenController extends Controller
             "id_murid" => $request->id_murid,
             "status" => $request->status,
             "tanggal" => date("Y-m-d"),
-            "keterangan" => $request->keterangan,
+            "keterangan" => $cetak,
             "id_users" => auth()->user()->id
         ]);
 
@@ -44,10 +44,47 @@ class AbsenController extends Controller
     public function pertanggal()
     {
         $data = [
+            "data_murid" => Murid::orderBy("nama_murid", "DESC")->get(),
             "data_absen" => Absen::orderBy("id_murid", "DESC")->get()
         ];
 
         return view("pelatih/absen/data_absen_per_tanggal", $data);
+    }
+
+    public function edit_absen(Request $request)
+    {
+        $data = [
+            "data_murid" => Murid::orderBy("nama_murid", "DESC")->get(),
+            "edit" => Absen::where("id_absen", $request->id_absen)->first()
+        ];
+
+        return view("pelatih/absen/edit_data_absen", $data);
+    }
+
+    public function simpan_data_edit_absen(Request $request)
+    {
+        Absen::where("id_absen", $request->id_absen)->update([
+            "id_murid" => $request->id_murid,
+            "status" => $request->status,
+            "tanggal" => $request->tanggal,
+            "keterangan" => $request->keterangan,
+            "id_users" => auth()->user()->id
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function tambah_absen_pertanggal(Request $request)
+    {
+        Absen::create([
+            "id_murid" => $request->id_murid,
+            "status" => $request->status,
+            "tanggal" => $request->tanggal,
+            "keterangan" => $request->keterangan,
+            "id_users" => auth()->user()->id
+        ]);
+
+        return redirect()->back();
     }
 
     public function hapus(Request $request)
