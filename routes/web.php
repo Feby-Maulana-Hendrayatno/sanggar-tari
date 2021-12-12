@@ -14,6 +14,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PelatihKategoriTariController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\KemampuanController;
+use App\Http\Controllers\LandingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,107 +25,97 @@ use App\Http\Controllers\KemampuanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::get('/', function () {
-    return view('/admin/dashboard');
-});
-
-Route::get('/', [AdminController::class, "dashboard"]);
-
-Route::get("/layouts", function() {
-    return view("/layouts/template");
-});
-
-Route::get('/dashboard', function () {
-    return view('/admin/dashboard');
-})->middleware('admin');
-
-
-
+Route::get("/template_pengunjung", [LandingController::class, "template_pengunjung"]);
+Route::get("/", [LandingController::class, "index"]);
+Route::get("/login", [LandingController::class, "login"]);
 // login adminController
-Route::get('/logout', [loginController::class, "logout"]);
 
-Route::get("/login", [LoginController::class, "login"])->middleware('guest');
+Route::group(["middleware" => ["guest"]], function() {
 
-Route::POST("/post_login", [LoginController::class, "post_login"] );
+    Route::prefix("admin")->group(function() {
 
-Route::get('pelatih/addpelatih', function () {
+        Route::get("/login", [LoginController::class, "login"]);
 
-    return view('/admin/pelatih/addpelatih');
-})->middleware('admin');
+        Route::post("/post_login", [LoginController::class, "post_login"] );
 
-Route::get('/murid', function () {
-    return view('/admin/murid');
-})->middleware('admin');
-// kalendar
-
-Route::prefix("admin")->group(function() {
-
-    Route::prefix("kemampuan")->group(function() {
-        Route::get("/", [KemampuanController::class, "index"]);
-        Route::post("/tambah/", [KemampuanController::class, "tambah"]);
-        Route::post("/hapus", [KemampuanController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [KemampuanController::class, "edit"]);
-        Route::post("/simpan", [KemampuanController::class, "simpan"]);
     });
 
-    Route::prefix("full-calender")->group(function() {
-        Route::get("/", [FullCalenderController::class, "index"]);
-        Route::post("/action", [FullCalenderController::class, "action"]);
+});
+
+Route::group(["middleware" => ["admin"]], function() {
+
+    Route::prefix("admin")->group(function() {
+
+        Route::get("/dashboard", [AdminController::class, "dashboard"]);
+
+        Route::prefix("kemampuan")->group(function() {
+            Route::get("/", [KemampuanController::class, "index"]);
+            Route::post("/tambah/", [KemampuanController::class, "tambah"]);
+            Route::post("/hapus", [KemampuanController::class, "hapus"]);
+            Route::get("/edit/{id_role}", [KemampuanController::class, "edit"]);
+            Route::post("/simpan", [KemampuanController::class, "simpan"]);
+        });
+
+        Route::prefix("full-calender")->group(function() {
+            Route::get("/", [FullCalenderController::class, "index"]);
+            Route::post("/action", [FullCalenderController::class, "action"]);
+        });
+
+        Route::prefix("role")->group(function() {
+            Route::get("/", [RoleController::class, "index"]);
+            Route::post("/tambah/", [RoleController::class, "tambah"]);
+            Route::post("/hapus", [RoleController::class, "hapus"]);
+            Route::get("/edit/{id_role}", [RoleController::class, "edit"]);
+            Route::post("/simpan", [RoleController::class, "simpan"]);
+        });
+
+        Route::prefix("pelatih")->group(function() {
+            Route::get("/", [PelatihController::class, "index"]);
+            Route::post("/store", [PelatihController::class, "store"]);
+            Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
+            Route::get("/edit/{id}", [PelatihController::class, "edit"]);
+            Route::get("/detail/{id}", [PelatihController::class, "detail"]);
+            Route::get("/hapus/{id}/", [PelatihController::class, "destroy"]);
+            Route::post("/update", [PelatihController::class, "update"]);
+        });
+
+        Route::prefix("murid")->group(function() {
+            Route::get("/", [MuridController::class, "index"]);
+            Route::post("/store", [MuridController::class, "store"]);
+            Route::get("/tambah_data", [MuridController::class, "tambah_data"]);
+            Route::get("/edit/{id}", [MuridController::class, "edit"]);
+            Route::get("/detail/{id}", [MuridController::class, "detail"]);
+            Route::post("/hapus", [MuridController::class, "destroy"]);
+            Route::post("/update", [MuridController::class, "update"]);
+        });
+
+        Route::prefix("users")->group(function() {
+            Route::get("/", [AkunController::class, "index"]);
+            Route::post("/tambah/", [AkunController::class, "tambah"]);
+            Route::post("/hapus", [AkunController::class, "hapus"]);
+            Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
+            Route::post("/simpan", [AkunController::class, "simpan"]);
+        });
+
+        Route::prefix("kategori_tari")->group(function() {
+            Route::get("/", [KategoriTariController::class, "index"]);
+            Route::post("/tambah/", [KategoriTariController::class, "tambah"]);
+            Route::post("/hapus", [KategoriTariController::class, "hapus"]);
+            Route::get("/edit/{id_role}", [KategoriTariController::class, "edit"]);
+            Route::post("/simpan", [KategoriTariController::class, "simpan"]);
+        });
+
+        Route::prefix("pelatih_kategori_tari")->group(function() {
+            Route::get("/", [PelatihKategoriTariController::class, "index"]);
+            Route::post("/tambah", [PelatihKategoriTariController::class, "tambah"]);
+            Route::post("/hapus", [PelatihKategoriTariController::class, "hapus"]);
+            Route::get("/edit/{id_pelatih_kategori}", [PelatihKategoriTariController::class, "edit"]);
+            Route::post("/simpan", [PelatihKategoriTariController::class, "simpan"]);
+        });
+
+        Route::get("/logout", [LoginController::class, "logout"]);
     });
 
-    Route::prefix("role")->group(function() {
-        Route::get("/", [RoleController::class, "index"]);
-        Route::post("/tambah/", [RoleController::class, "tambah"]);
-        Route::post("/hapus", [RoleController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [RoleController::class, "edit"]);
-        Route::post("/simpan", [RoleController::class, "simpan"]);
-    });
-
-    Route::prefix("pelatih")->group(function() {
-        Route::get("/", [PelatihController::class, "index"]);
-        Route::post("/store", [PelatihController::class, "store"]);
-        Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
-        Route::get("/edit/{id}", [PelatihController::class, "edit"]);
-        Route::get("/detail/{id}", [PelatihController::class, "detail"]);
-        Route::get("/hapus/{id}/", [PelatihController::class, "destroy"]);
-        Route::post("/update", [PelatihController::class, "update"]);
-    });
-
-    Route::prefix("murid")->group(function() {
-        Route::get("/", [MuridController::class, "index"]);
-        Route::post("/store", [MuridController::class, "store"]);
-        Route::get("/tambah_data", [MuridController::class, "tambah_data"]);
-        Route::get("/edit/{id}", [MuridController::class, "edit"]);
-        Route::get("/detail/{id}", [MuridController::class, "detail"]);
-        Route::post("/hapus", [MuridController::class, "destroy"]);
-        Route::post("/update", [MuridController::class, "update"]);
-    });
-
-    Route::prefix("users")->group(function() {
-        Route::get("/", [AkunController::class, "index"]);
-        Route::post("/tambah/", [AkunController::class, "tambah"]);
-        Route::post("/hapus", [AkunController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
-        Route::post("/simpan", [AkunController::class, "simpan"]);
-    });
-
-    Route::prefix("kategori_tari")->group(function() {
-        Route::get("/", [KategoriTariController::class, "index"]);
-        Route::post("/tambah/", [KategoriTariController::class, "tambah"]);
-        Route::post("/hapus", [KategoriTariController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [KategoriTariController::class, "edit"]);
-        Route::post("/simpan", [KategoriTariController::class, "simpan"]);
-    });
-
-    Route::prefix("pelatih_kategori_tari")->group(function() {
-        Route::get("/", [PelatihKategoriTariController::class, "index"]);
-        Route::post("/tambah", [PelatihKategoriTariController::class, "tambah"]);
-        Route::post("/hapus", [PelatihKategoriTariController::class, "hapus"]);
-        Route::get("/edit/{id_pelatih_kategori}", [PelatihKategoriTariController::class, "edit"]);
-        Route::post("/simpan", [PelatihKategoriTariController::class, "simpan"]);
-    });
 });
 
 Route::prefix("pelatih")->group(function() {
