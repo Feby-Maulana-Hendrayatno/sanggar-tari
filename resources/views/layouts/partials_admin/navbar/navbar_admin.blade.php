@@ -63,6 +63,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="{{ url('/admin/kategori_tari/') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Kategori Tari</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="{{ url('/admin/pelatih/') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pelatih</p>
