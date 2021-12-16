@@ -162,10 +162,24 @@ Route::prefix("pelatih")->group(function() {
 
 
 Route::prefix("pengunjung")->group(function() {
+    
     Route::prefix("form")->group(function() {
         Route::get("/", [FormController::class, "index"]);
         Route::get("/store", [FormController::class, "store"]);
         Route::post("/tambah/", [FormController::class, "tambah"]);
         Route::post("/hapus", [FormController::class, "hapus"]);
     });
+
+    Route::prefix("event")->group(function() {
+        Route::get("/", [FormController::class, "index"]);
+        Route::get("/store", [FormController::class, "store"]);
+        Route::post("/tambah/", [FormController::class, "tambah"]);
+        Route::post("/hapus", [FormController::class, "hapus"]);
+    });
+
+    Route::prefix("full-calender")->group(function() {
+        Route::get("/", [FullCalenderController::class, "index_pengunjung"]);
+        Route::post("/action", [FullCalenderController::class, "action"]);
+    });
+
 });
