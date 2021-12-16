@@ -1,13 +1,10 @@
+@extends("layouts.template_pengunjung")
+
+@section("page_content")
+
 <link rel="stylesheet" type="text/css" href="{{ url('/landing') }}/css/form.css">
 
-<html>
-<head>
-	<title>Form Daftar Pelatihan</title>
-</head>
-
-
-<body>
-	<div class="konten">
+<div class="konten">
 		<div class="kepala">
 			<div class="lock"></div>
 			<h2 class="judul">Form Daftar Pelatihan</h2>
@@ -53,8 +50,9 @@
         </fieldset>
       </form>
   </div>
-</div>
-</body>
-</html>
+  </div>
+  </div>
+@endsection
+
 
 

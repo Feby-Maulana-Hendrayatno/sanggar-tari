@@ -1,6 +1,7 @@
 body{
     background-image: url(green.jpg);
-    width: 500px;
+    /* width: 500px; */
+    padding-top: 100px;
     height: 300px;
     margin: 10 auto;
     opacity: 0.9;
@@ -9,17 +10,24 @@ body{
     box-sizing: 50px;
    }
    .konten{
+    
     background:#556b2f;
     border: #00868b;
-    width: 360px;
-    margin: 30px auto 0;
-    border-radius: 16px;
+    margin: 40px auto;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
     overflow: hidden;
+    border: 2px;
+    
    }
    .kepala{
+    
+    border-radius: 12px 12px 5px 5px; 
     background: #a0cc4e;
-    padding: 7px 7px;
-    height: 40px;
+    padding: 2px 2px;
+    height: 70px;
    }
    .lock{
     display: inline-block;
@@ -61,7 +69,7 @@ body{
    .grup input[type="tel"],
    .grup input[type="email"],
    .grup input[type="password"]{
-    width: 300px;
+    width: 350px;
     height: 30px;
     padding: 0 10px;
     background: #ffffff;
@@ -100,11 +108,12 @@ body{
     font-weight: normal;
    }
    .footer{
-    padding: 5px;
+    padding-top: 50px;
     font-size: 20px;
     color: #ffffff;
     height: 88px;
-    margin-left: 30px;
+    /* margin-left: 20px; */
     margin-bottom: -80px;
     margin-top: -30px;
+    padding-bottom: 150px;
    }
