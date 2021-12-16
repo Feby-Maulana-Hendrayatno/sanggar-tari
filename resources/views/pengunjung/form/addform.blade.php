@@ -4,6 +4,8 @@
 <head>
 	<title>Form Daftar Pelatihan</title>
 </head>
+
+
 <body>
 	<div class="konten">
 		<div class="kepala">
