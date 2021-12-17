@@ -80,7 +80,7 @@ Route::group(["middleware" => ["admin"]], function() {
             Route::post("/hapus/", [PelatihController::class, "destroy"]);
             Route::post("/update", [PelatihController::class, "update"]);
         });
-
+                    
         Route::prefix("murid")->group(function() {
             Route::get("/", [MuridController::class, "index"]);
             Route::post("/store", [MuridController::class, "store"]);

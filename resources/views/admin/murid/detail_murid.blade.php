@@ -2,24 +2,25 @@
 
 @section("header")
 
+@section("header")
+
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Murid </h1>
+            <h1 class="m-0"> Data Murid</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item">
                     <a href="{{ url('/admin/dashboard') }}"> Dashboard </a>
                 </li>
-                <li class="breadcrumb-item">
-                  <a href="{{ url('/admin/murid/') }}"> Data Murid </a>
-                </li>
-                <li class="breadcrumb-item active"> Detail Data Murid </li>
+                <li class="breadcrumb-item active"> Murid </li>
             </ol>
         </div>
     </div>
 </div>
+
+@endsection
 
 @endsection
 
@@ -48,12 +49,12 @@
 							<input disabled class="form-control"  value="{{ $detail->nama_murid }}">
 						</div>
 						<div class="form-group">
-							<label>Umur</label>
-							<input disabled class="form-control" value="{{ $detail->umur }}">
-						</div>
-						<div class="form-group">
 							<label>Jenis Kelamin</label>
 							<input disabled class="form-control" value="{{ $detail->jenis_kelamin }}">
+						</div>
+                        <div class="form-group">
+							<label>Umur</label>
+							<input disabled class="form-control" value="{{ $detail->umur }}">
 						</div>
 						<div class="form-group">
 							<label>Nomer Handphone</label>
@@ -65,7 +66,7 @@
 						</div>
 						<div class="form-group">
 							<label for=""> Foto </label> <br>
-							<img src="/image/{{ $detail->foto }}" width="300">
+							<img src="{{ url('/storage/'.$detail->foto) }}" width="300">
 						</div>
 					</div>
                 </div>

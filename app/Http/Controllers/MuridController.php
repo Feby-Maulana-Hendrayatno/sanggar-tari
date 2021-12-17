@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Murid;
 use File;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class MuridController extends Controller
 {
@@ -31,9 +32,12 @@ class MuridController extends Controller
     public function create()
     {
         // = SELECT * FROM murid;  
- 
+            $data = [
+            "data_murid" => Murid::all()
+        ];
+
         return view("/admin/murid/addmurid/index", $data);
-    }
+        }
 
     public function tambah_data()
     {
@@ -48,17 +52,33 @@ class MuridController extends Controller
      */
     public function store(Request $request)
     {
-        Murid::create($request->all());
+        $validateData = $request->validate([
+            "nama_murid" => "required",
+            "umur" => "required",
+            "jenis_kelamin" => "required",
+            "no_hp" => "required",
+            "alamat" => "required",
+            "foto" => "image"
+        ]);
 
+        if ($request->file("foto")) {
+            $validateData['foto'] = $request->file("foto")->store("image");
+        }
+
+        Murid::create($validateData);
         User::create([
             "name" => $request->nama_murid,
             "email" => $request->nama_murid."@gmail.com",
             "password" => bcrypt("murid"),
-            "id_role" => 2
+            "id_role" => 1
         ]);
-    
-        return redirect("admin/murid")->with("tambah", "Data Berhasil di Tambahkan");
+
+
+
+        return redirect("/admin/murid")->with("tambah", "Data Berhasil di Tambahkan");
     }
+        
+    
 
     /**
      * Display the specified resource.
@@ -92,6 +112,8 @@ class MuridController extends Controller
         
         return view("/admin/murid/detail_murid", $data);
 
+        
+
     }
 
     /**
@@ -103,30 +125,26 @@ class MuridController extends Controller
      */
     public function update(Request $request)
     {
-        $update = Murid::where("id", $request->id)->first();
-
-        $update->nama_murid = $request->nama_murid;
-        $update->umur = $request->umur;
-        $update->jenis_kelamin = $request->jenis_kelamin;
-        $update->no_hp = $request->no_hp;
-        $update->alamat = $request->alamat;
+        $validateData = $request->validate([
+            "nama_murid" => "required",
+            "jenis_kelamin" => "required",
+            "umur" => "required",
+            "no_hp" => "required",
+            "alamat" => "required",
+            "foto" => "image"
+        ]);
         
         
-        if ($request->file("foto") == "") {
+        if ($request->file("foto")) {
 
-            $update->foto = $update->foto;
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
 
-        } else {
+            $validateData['foto'] = $request->file("foto")->store("image");
 
-            File::delete("image/".$update->foto);
-            
-            $file = $request->file("foto");
-            $fileName = $file->getClientOriginalName();
-            $request->file("foto")->move("image", $fileName);
-            $update->foto = $fileName;
-        }
-
-        $update->update();
+        } 
+            Murid::where("id", $request->id)->update($validateData);
 
         return redirect("/admin/murid")->with("update", "Data Berhasil di update");
     }
@@ -141,8 +159,18 @@ class MuridController extends Controller
      */
     public function destroy(Request $request)
     {
+        if ($request->foto) {
+            Storage::delete($request->foto);
+        }
+
+        $data = Murid::where("id", $request->id)->first();
+        
+        $nama_murid = $data->nama_murid;
+
         Murid::where("id", $request->id)->delete();
 
+        User::where("name", $nama_murid)->delete();
+        
         return redirect()->back();
     }
 }

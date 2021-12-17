@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Pelatih Kategori Tari </h1>
+            <h1 class="m-0"> Murid </h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -23,7 +23,7 @@
 @section("alerts")
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-@if(session("tambah"))
+@if(session("tambah_data"))
 		<script>
 			Swal.fire(
 			'Data Berhasil di Tambahkan',
@@ -43,7 +43,7 @@
 @stop
 
 @section('title')
-  Data Murid
+  Data Pelatih
 @stop
 
 @section("content")
@@ -51,16 +51,27 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+
+			@if(session("tambah"))
+			<div class="alert alert-success" role="alert">
+				{{  session("tambah")  }}
+			</div>
+			@elseif(session("update"))
+			<div class="alert alert-warning" role="alert">
+				{{ session("update") }}
+			</div>
+			@endif
+
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('/admin/murid/store') }}"> 
-						<h3 class="card-title">
-							<span class="btn btn-success col fileinput-button dz-clickable">
-								<i class="fas fa-plus"></i>
-								<span >Data Murid</span>
-							</span>
-						</h3>
-					</a>
+				<a href="{{ url('/admin/murid/tambah_data') }}">
+					<h3 class="card-title">
+						<span class="btn btn-success col fileinput-button dz-clickable">
+                        <i class="fas fa-plus"></i>
+                        <span >Data Murid</span>
+                    	</span>
+					</h3>
+				</a>
 				</div>
 				<div class="card-body">
 					<table id="example1" class="table table-bordered table-striped">
@@ -69,7 +80,7 @@
 								<th class="text-center">No.</th>
 								<th>Nama</th>
 								<th class="text-center">Jenis Kelamin</th>
-								<th>Alamat</th>
+								<th class="text-center">No HP</th>
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
@@ -85,31 +96,32 @@
 									@elseif($dp->jenis_kelamin == "P")
 										Perempuan
 									@else
-										Tidak Jelas
+										Tidak Ada
 									@endif
 								</td>
-								<td>{{ $dp->alamat }}</td>
-								<td class="text-center">	
+								<td class="text-center">{{ $dp->no_hp }}</td>
+								<td class="text-center">
 									<a href="/admin/murid/detail/{{ $dp->id }}" class="btn btn-success text-white btn-sm">
-										<i class="fas fa-clipboard"></i> detail
+										<i class="fas fa-clipboard"></i> Detail
 									</a>
 									<a href="/admin/murid/edit/{{ $dp->id }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
 									</a>
 									<form method="POST" action="{{ url('/admin/murid/hapus') }}" class="d-inline">
-										@csrf
-										<input type="hidden" name="id" value="{{ $dp->id }}">
-										<button onclick="return confirm('Yakin ? Ingin Menghapus Data Ini ?')" class="btn btn-danger btn-sm">
-											<i class="fa fa-trash-o"></i> Hapus
-										</button>
-									</form>
+                                        @csrf
+                                        <input type="hidden" name="foto" value="{{  $dp->foto }}">
+                                        <input type="hidden" name="id" value="{{ $dp->id }}">
+                                        <button onclick="return confirm('Yakin ? Ingin Menghapus Data Ini ?')" type="submit" name="btn-hapus" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash-o"></i> Hapus
+                                        </button>
+                                    </form>
 								</td>
 							</tr>
 							@endforeach
 						</tbody>
 					</table>
 				</div>
-			</div>		
+			</div>
 		</div>
 	</div>
 </div>

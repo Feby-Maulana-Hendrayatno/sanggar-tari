@@ -19,7 +19,7 @@ class PelatihController extends Controller
     {
         // = SELECT * FROM pelatih;
         $data = [
-            "data_pelatih" => Pelatih::all()
+            "data_pelatih" => Pelatih::orderBy("id", "DESC")->get()
         ];
 
         return view("/admin/pelatih/data_pelatih", $data);
@@ -44,6 +44,7 @@ class PelatihController extends Controller
     {
         return view("/admin/pelatih/addpelatih");
     }
+    
 
     /**
      * Store a newly created resource in storage.

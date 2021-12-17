@@ -1,11 +1,32 @@
 @extends("layouts.template")
 
+@section("ajax_calendar_js")
+
+<script>
+    function viewImage()
+    {
+        const image = document.querySelector('#foto');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+</script>
+
+@endsection
+
 @section("header")
 
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Murid </h1>
+            <h1 class="m-0"> Pelatih </h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -13,7 +34,7 @@
                     <a href="{{ url('/admin/dashboard') }}"> Dashboard </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="{{ url('/admin/murid/') }}"> Data Murid </a>
+                    <a href="{{ url('/admin/data_murid') }}"> Data Murid </a>
                 </li>
                 <li class="breadcrumb-item active"> Edit Data Murid </li>
             </ol>
@@ -34,23 +55,20 @@
 						<h3 class="card-title">
 							<span class="btn btn-secondary col fileinput-button dz-clickable">
                                 <i class="fa fa-reply"></i>
-								<span >Data Murid</span>
+								<span >Edit Data Murid</span>
 							</span>
 						</h3>
 					</a>
 				</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ url('/admin/murid/update/')}}" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/murid/update" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <input type="hidden" name="id" value="{{ $edit->id }}" >
+                        <input type="hidden" name="oldImage" value="{{ $edit->foto }}">
+                        <input type="hidden" name="id" value="{{ $edit->id }}">
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Nama Murid</label>
-                                <input type="" name="nama_murid" class="form-control" id="" placeholder="Masukan Nama Murid" required value="{{ $edit->nama_murid }}">
-                            </div>
-                            <div class="form-group">
-                                <label>Umur</label>
-                                <input type="number" name="umur" class="form-control" id="" placeholder="Umur Murid" required value="{{ $edit->umur }}">
+                                <label>Nama Pelatih</label>
+                                <input type="" name="nama_murid" class="form-control" id="" placeholder="Masukan Nama" required value="{{ $edit->nama_murid }}">
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
@@ -58,7 +76,7 @@
                                 @if($edit->jenis_kelamin == "L")
                                 <input type="radio" name="jenis_kelamin" value="L" checked> Laki-laki
                                 <input type="radio" name="jenis_kelamin" value="P"> Perempuan
-                                @elseif($edit->jenis_kelamin == "P")
+                                @elseif($edit->jenis_kelamin == "Perempuan")
                                 <input type="radio" name="jenis_kelamin" value="L"> Laki-laki
                                 <input type="radio" name="jenis_kelamin" value="P" checked> Perempuan
                                 @else
@@ -67,20 +85,26 @@
                                 @endif
                             </div>
                             <div class="form-group">
+                                <label>Umur</label>
+                                <input type="number" name="umur" class="form-control" id="" placeholder="Umur" value="{{ $edit->umur }}" required>
+                            </div>
+                            <div class="form-group">
                                 <label>Nomer Handphone</label>
-                                <input type="" name="no_hp" class="form-control" id="" placeholder="Nomer Handphone" value="{{ $edit->no_hp }} " required>
+                                <input type="" name="no_hp" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->no_hp }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
                                 <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}" required>
                             </div>
                             <div class="form-group">
-                                <label for=""> Foto </label> <br>
-                                <img src="/image/{{ $edit->foto }}" width="300" required>
-                            </div>
-                            <div class="form-group">
                                 <label>Foto Murid</label>
-                                <input type="file" class="form-control" name="foto" id="" placeholder="Masukan Foto/Gambar" value="{{ $edit->foto }}" >
+                                @if($edit->foto)
+                                <img class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ url('/storage/'.$edit->foto) }}">
+                                @else
+                                <img class="img-preview img-fluid mb-3 col-sm-5">
+                                @endif
+
+                                <input type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
                             </div>
                             <br>
                             <div>
