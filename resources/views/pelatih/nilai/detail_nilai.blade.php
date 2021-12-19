@@ -17,9 +17,10 @@
                     </h3>
                 </div>
                 <div class="card-body">
+                    <input type="hidden" name="id_murid" value="{{ $detail->id }}">
                     <div class="form-group">
                         <label for="id_murid" >Nama</label>
-                        <input readonly type="text" name="id_murid" value="{{ $detail->id_murid }}" class="form-control">
+                        <input readonly type="text" name="" value="{{ $detail->nama_murid }}" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="jenis_tari" >Jenis Tari</label>
@@ -28,7 +29,8 @@
                         @foreach ($data_kategori_tari as $tari)
                             <?php
                                 $data_tari = DB::table("nilai")
-                                        ->where("jenis_tari", $tari->nama_kategori_tari)
+                                ->where("id_murid", $detail->id)        
+                                ->where("jenis_tari", $tari->nama_kategori_tari)
                                         ->first();
                             ?>
                             @if($data_tari)
@@ -68,7 +70,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped" >
                     <thead>
                         <tr>
                             <th class="text-center">No</th>
@@ -80,10 +82,11 @@
                     </thead>
                     <tbody>
                         @php $no = 0 @endphp
+                        
                         @foreach($data_nilai as $nilai)
                         <tr>
                             <td class="text-center">{{ ++$no }}.</td>
-                            <td class="text-center">{{ $nilai->id_murid }}</td>
+                            <td class="text-center">{{ $nilai->getMurid->nama_murid }}</td>
                             <td class="text-center">{{ $nilai->jenis_tari }}</td>
                             <td class="text-center">{{ $nilai->nilai }}</td>
                             <td class="text-center">

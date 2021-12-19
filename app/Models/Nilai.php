@@ -13,10 +13,8 @@ class Nilai extends Model
 
     public $timestamps = false;
 
-    public function getMurid()
-
-    {
-    	return $this->belongsTo("App\Models\Model\Murid", "id", "id");
+    public function getMurid() {
+        return $this->belongsTo("App\Models\Murid", "id_murid", "id");
     }
 
 }

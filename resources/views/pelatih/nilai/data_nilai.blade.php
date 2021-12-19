@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">No</th>
-                            <th class="text-center">Nama</th>
+                            <th class="text-center">Nama Murid</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -33,16 +33,6 @@
                                 <a href="/pelatih/nilai/detail/{{ $murid->id }}" class="btn btn-success text-white btn-sm">
                                     <i class="fas fa-clipboard"></i> Detail
                                 </a>
-                                <a href="{{ url('/pelatih/nilai/edit') }}/{{ $murid->id }}" class="btn btn-warning btn-sm">
-                                    <span class="fa fa-edit"></span>
-                                </a>
-                                <form method="POST" action="{{ url('/pelatih/nilai/hapus') }}" style="display: inline;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $murid->id }}">
-                                    <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
-                                        <span class="fa fa-trash"></span>
-                                    </button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
