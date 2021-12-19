@@ -36,12 +36,25 @@ class NilaiController extends Controller
 
     public function edit($id)
     {
+
         $data = [
-            "edit" => Nilai::where("id", $id)->first(),
-            "data_role" => Nilai::where("id", "!=", $id)->orderBy("id", "ASC")->get()
+            "data_nilai" => Nilai::orderBy("id", "DESC")->get(),
+        	"edit" => Nilai::where("id", $id)->first(),
+        	"data_murid" => Nilai::where("id", "!=", $id)->orderBy("id", "ASC")->get(),
+            "data_kategori_tari" => KategoriTari::where("id", "!=", $id)->orderBy("id", "ASC")->get()
         ];
 
         return view("/pelatih/nilai/edit_nilai", $data);
+    }
+
+    public function detail($id)
+    {
+        $data = [
+            "detail" => Nilai::where("id", $id)->first()
+        ];
+        
+        return view("/pelatih/nilai/detail_murid", $data);
+    
     }
 
     public function simpan(Request $request)

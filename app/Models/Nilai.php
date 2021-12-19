@@ -12,4 +12,10 @@ class Nilai extends Model
     protected $guarded = [''];
 
     public $timestamps = false;
+
+    public function getMurid()
+
+    {
+    	return $this->belongsTo("App\Models\Model\Murid", "id", "id");
+    }
 }

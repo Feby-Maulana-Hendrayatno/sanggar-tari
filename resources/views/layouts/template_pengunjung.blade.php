@@ -7,12 +7,13 @@
     <meta name="author" content="" />
     <title>Sanggar Tari Melati Ayu</title>
     <!-- Favicon-->
-    @include("layouts.partials_pengunjung.css.style_css")
 
     
 
-    @yield("ajax_calendar_css")
+    @include("layouts.partials_pengunjung.css.style_css")
 
+    @yield("ajax_calendar_css")
+    
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -24,7 +25,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Contact Us</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Kelompok 2</h3>
             </div>
             <!-- * * * * * * * * * * * * * * *-->
             <!-- * * SB Forms Contact Form * *-->
@@ -38,26 +39,24 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            <input disabled class="form-control" id="name" type="text" placeholder="Sanggar Tari Ayu Melati" style="text-align:center">
                         </div>
                         <div class="form-group">
                             <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            <input class="form-control" id="email" type="email" placeholder="SanggarTariMelatiAyu@gmail.com" disabled style="text-align:center">
                         </div>
                         <div class="form-group mb-md-0">
                             <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            <input class="form-control" placeholder="087724782177" style="text-align:center" disabled >
+                        </div>
+                        <br>
+                        <div class="form-group mb-md-0">
+                            <input class="form-control" placeholder="Founder by Rokhman & Rokhim" style="text-align:center" disabled >
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        <img src="{{ url('/landing') }}/assets/img/sanggartari.jpg" width="300px" height="300px" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -299,6 +298,10 @@
     <!-- Bootstrap core JS-->
     
     @include("layouts.partials_pengunjung.js.style_js")
+
+    @yield('js')
+
+    @yield("ajax_calendar_js")
 
     
 </body>

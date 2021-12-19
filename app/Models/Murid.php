@@ -14,4 +14,5 @@ class Murid extends Model
     protected $guarded = [''];
 
     public $timestamps = false;
+    
 }

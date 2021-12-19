@@ -111,9 +111,7 @@ class MuridController extends Controller
         ];
         
         return view("/admin/murid/detail_murid", $data);
-
-        
-
+    
     }
 
     /**

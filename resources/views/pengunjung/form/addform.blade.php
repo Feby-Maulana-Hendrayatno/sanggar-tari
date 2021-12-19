@@ -30,7 +30,7 @@
         <br>
         <div class="grup">
           <label >No Hp<span class="required">*</span></label>
-          <input type="number" name="no_hp" required placeholder="Masukkan Nomor Handphone ">
+          <input type="text" name="no_hp" required placeholder="Masukkan Nomor Handphone ">
         </div>
         <br>
         <div class="grup-offset">
