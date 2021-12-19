@@ -39,13 +39,13 @@
                                         ->first();
                             ?>
                             @if($data_tari)
-                            
+
                             @else
                             <option value="{{ $tari-> nama_kategori_tari }}">
                                 {{ $tari->nama_kategori_tari }}
                             </option>
                             @endif
-                            
+
                         @endforeach
                         </select>
                     </div>

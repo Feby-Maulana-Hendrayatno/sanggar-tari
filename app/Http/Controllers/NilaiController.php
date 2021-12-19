@@ -52,9 +52,10 @@ class NilaiController extends Controller
         $data = [
             "detail" => Nilai::where("id", $id)->first()
         ];
-        
-        return view("/pelatih/nilai/detail_murid", $data);
-    
+
+        return view("/pelatih/nilai/detail_nilai", $data);
+
+
     }
 
     public function simpan(Request $request)

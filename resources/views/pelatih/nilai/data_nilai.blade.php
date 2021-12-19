@@ -39,13 +39,13 @@
                                         ->first();
                             ?>
                             @if($data_tari)
-                            
+
                             @else
                             <option value="{{ $tari-> nama_kategori_tari }}">
                                 {{ $tari->nama_kategori_tari }}
                             </option>
                             @endif
-                            
+
                         @endforeach
                         </select>
                     </div>
@@ -94,6 +94,9 @@
                             <td class="text-center">{{ $nilai->jenis_tari }}</td>
                             <td class="text-center">{{ $nilai->nilai }}</td>
                             <td class="text-center">
+                                <a href="/pelatih/nilai/detail/{{ $nilai->id }}" class="btn btn-success text-white btn-sm">
+                                    <i class="fas fa-clipboard"></i> Detail
+                                </a>
                                 <a href="{{ url('/pelatih/nilai/edit') }}/{{ $nilai->id }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
@@ -115,3 +118,4 @@
 </div>
 
 @endsection
+

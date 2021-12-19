@@ -8,12 +8,12 @@
     <title>Sanggar Tari Melati Ayu</title>
     <!-- Favicon-->
 
-    
+
 
     @include("layouts.partials_pengunjung.css.style_css")
 
     @yield("ajax_calendar_css")
-    
+
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                        <img src="{{ url('/landing') }}/assets/img/sanggartari.jpg" width="300px" height="300px" alt="..." />
+                        <img src="{{ url('/landing') }}/assets/img/sanggartari.jpg" width="700px" height="340px" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -296,14 +296,14 @@
         </div>
     </div>
     <!-- Bootstrap core JS-->
-    
+
     @include("layouts.partials_pengunjung.js.style_js")
 
     @yield('js')
 
     @yield("ajax_calendar_js")
 
-    
+
 </body>
 </html>
 

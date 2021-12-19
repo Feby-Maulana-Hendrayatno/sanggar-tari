@@ -13,7 +13,7 @@
                         <span class="fa fa-edit"></span> Ubah Data
                     </h3>
                 </div>
-                
+
                 <div class="card-body">
                     <label  class="">Nama</label>
                     <input disabled type="text" class="form-control" id="nama_murid" name="nama_murid" value="{{ $edit->nama_murid }}">
@@ -109,3 +109,4 @@
 </div>
 
 @endsection
+
