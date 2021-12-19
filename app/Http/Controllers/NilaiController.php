@@ -13,12 +13,22 @@ class NilaiController extends Controller
     {
         $data = [
             "data_murid" => Murid::orderBy("nama_murid", "ASC")->get(),
-            "data_nilai" => Nilai::orderBy("nama_murid", "ASC")->get(),
+            "data_nilai" => Nilai::orderBy("id_murid", "ASC")->get(),
             "data_kategori_tari" => KategoriTari::orderBy("id", "ASC")->get()
         ];
 
         return view("/pelatih/nilai/data_nilai", $data);
     }
+
+    public function data_nilai()
+    {
+        $data = [
+            "data_nilai" => Nilai::orderBy("id_murid", "ASC")->get()
+        ];
+
+        return view("/pelatih/nilai/detail_keseluruhan", $data);
+    }
+
 
     public function tambah(Request $request)
     {
@@ -49,9 +59,17 @@ class NilaiController extends Controller
 
     public function detail($id)
     {
+
         $data = [
-            "detail" => Nilai::where("id", $id)->first()
+            "detail" => Nilai::where("id", $id)->orderBy("id_murid", "DESC")->first(),
+            "data_kategori_tari" => KategoriTari::get(),
+            "data_nilai" => Nilai::orderBy("id", "DESC")->get(),
         ];
+
+
+        // $data = [
+        //     "detail" => Nilai::where("id_murid", $id)->first()
+        // ];
 
         return view("/pelatih/nilai/detail_nilai", $data);
 

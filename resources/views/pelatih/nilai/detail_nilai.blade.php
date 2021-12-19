@@ -18,15 +18,8 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="nama_murid" >Nama</label>
-                        <select name="nama_murid" id="nama_murid" class="form-control">
-                        <option > - Nama Murid - </option>
-                        @foreach ($data_murid as $murid)
-                            <option value="{{ $murid-> nama_murid }}">
-                                {{ $murid->nama_murid }}
-                            </option>
-                        @endforeach
-                        </select>
+                        <label for="id_murid" >Nama</label>
+                        <input readonly type="text" name="id_murid" value="{{ $detail->id_murid }}" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="jenis_tari" >Jenis Tari</label>
@@ -90,12 +83,12 @@
                         @foreach($data_nilai as $nilai)
                         <tr>
                             <td class="text-center">{{ ++$no }}.</td>
-                            <td class="text-center">{{ $nilai->nama_murid }}</td>
+                            <td class="text-center">{{ $nilai->id_murid }}</td>
                             <td class="text-center">{{ $nilai->jenis_tari }}</td>
                             <td class="text-center">{{ $nilai->nilai }}</td>
                             <td class="text-center">
-                                <a href="{{ url('/pelatih/nilai/edit') }}/{{ $nilai->id }}" class="btn btn-warning btn-sm">
-                                    <span class="fa fa-edit"></span>
+                                <a href="/pelatih/nilai/detail/{{ $nilai->id }}" class="btn btn-success text-white btn-sm">
+                                    <i class="fas fa-clipboard"></i> Detail
                                 </a>
                                 <form method="POST" action="{{ url('/pelatih/nilai/hapus') }}" style="display: inline;">
                                     {{ csrf_field() }}
@@ -115,3 +108,4 @@
 </div>
 
 @endsection
+

@@ -31,7 +31,7 @@ class MuridController extends Controller
      */
     public function create()
     {
-        // = SELECT * FROM murid;  
+        // = SELECT * FROM murid;
             $data = [
             "data_murid" => Murid::all()
         ];
@@ -77,8 +77,8 @@ class MuridController extends Controller
 
         return redirect("/admin/murid")->with("tambah", "Data Berhasil di Tambahkan");
     }
-        
-    
+
+
 
     /**
      * Display the specified resource.
@@ -97,21 +97,21 @@ class MuridController extends Controller
     {
         $data = [
             "edit" => Murid::where("id", $id)->first()
-            
+
         ];
-        
+
         return view("/admin/murid/edit_murid", $data);
-        
+
     }
-    
+
     public function detail($id)
     {
         $data = [
             "detail" => Murid::where("id", $id)->first()
         ];
-        
+
         return view("/admin/murid/detail_murid", $data);
-    
+
     }
 
     /**
@@ -131,8 +131,8 @@ class MuridController extends Controller
             "alamat" => "required",
             "foto" => "image"
         ]);
-        
-        
+
+
         if ($request->file("foto")) {
 
             if ($request->oldImage) {
@@ -141,13 +141,13 @@ class MuridController extends Controller
 
             $validateData['foto'] = $request->file("foto")->store("image");
 
-        } 
+        }
             Murid::where("id", $request->id)->update($validateData);
 
         return redirect("/admin/murid")->with("update", "Data Berhasil di update");
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -162,13 +162,13 @@ class MuridController extends Controller
         }
 
         $data = Murid::where("id", $request->id)->first();
-        
+
         $nama_murid = $data->nama_murid;
 
         Murid::where("id", $request->id)->delete();
 
         User::where("name", $nama_murid)->delete();
-        
+
         return redirect()->back();
     }
 }

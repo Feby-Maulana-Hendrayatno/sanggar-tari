@@ -80,7 +80,7 @@ Route::group(["middleware" => ["admin"]], function() {
             Route::post("/hapus/", [PelatihController::class, "destroy"]);
             Route::post("/update", [PelatihController::class, "update"]);
         });
-                    
+
         Route::prefix("murid")->group(function() {
             Route::get("/", [MuridController::class, "index"]);
             Route::post("/store", [MuridController::class, "store"]);
@@ -137,6 +137,7 @@ Route::prefix("pelatih")->group(function() {
 
     Route::prefix("nilai")->group(function() {
         Route::get("/", [NilaiController::class, "index"]);
+        Route::get("/data_nilai", [NilaiController::class, "data_nilai"]);
         Route::post("/tambah/", [NilaiController::class, "tambah"]);
         Route::post("/hapus", [NilaiController::class, "hapus"]);
         Route::get("/edit/{id}", [NilaiController::class, "edit"]);

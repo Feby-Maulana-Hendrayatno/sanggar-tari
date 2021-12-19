@@ -18,4 +18,5 @@ class Nilai extends Model
     {
     	return $this->belongsTo("App\Models\Model\Murid", "id", "id");
     }
+
 }

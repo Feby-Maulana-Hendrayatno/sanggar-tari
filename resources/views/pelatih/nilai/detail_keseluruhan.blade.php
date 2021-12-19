@@ -25,24 +25,14 @@
                     </thead>
                     <tbody>
                         @php $no = 0 @endphp
-                        @foreach($data_murid as $murid)
+                        @foreach($data_nilai as $nilai)
                         <tr>
                             <td class="text-center">{{ ++$no }}.</td>
-                            <td class="text-center">{{ $murid->nama_murid }}</td>
+                            <td class="text-center">{{ $nilai->id_murid }}</td>
                             <td class="text-center">
-                                <a href="/pelatih/nilai/detail/{{ $murid->id }}" class="btn btn-success text-white btn-sm">
+                                <a href="/pelatih/nilai/detail/{{ $nilai->id }}" class="btn btn-success text-white btn-sm">
                                     <i class="fas fa-clipboard"></i> Detail
                                 </a>
-                                <a href="{{ url('/pelatih/nilai/edit') }}/{{ $murid->id }}" class="btn btn-warning btn-sm">
-                                    <span class="fa fa-edit"></span>
-                                </a>
-                                <form method="POST" action="{{ url('/pelatih/nilai/hapus') }}" style="display: inline;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $murid->id }}">
-                                    <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
-                                        <span class="fa fa-trash"></span>
-                                    </button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
