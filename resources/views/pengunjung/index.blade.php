@@ -114,6 +114,94 @@ adapun penghargaan yang pernah di terima adalah :
 </div>
 </div>
 	</div>
+	</section>
+<section class="content-header">
+	<div class="container">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="section-heading text-uppercase">JADWAL PELATIHAN</h2>
+			<h3 class="section-subheading text-muted">jadwal Pelatihan Sanggar Tari Melati Ayu</h3>
+		</div>
+		<br>
+	<head><title> JADWAL PELATIHAN</title>
+</head>
+<body>
+<table style="border-style: groove; font-size : 30px; text-align:center;" ><b>
+<tr>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Tabel HTML</title>
+    <style>
+        table {
+            border-collapse: collapse;
+			align:center;
+			padding-left:100px;
+			margin-left: 350px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th rowspan="2">Hari</th>
+            <th colspan="3">Jadwal Pelatihan Sanggar Tari Melati</th>
+        </tr>
+        <tr>
+            <th>Waktu</th>
+            <th>jenis Tari</th>
+            <th>Pelatih</th>
+        </tr>
+        <tr>
+            <td>SABTU</td>
+            <td>15.00-17.00</td>
+            <td>Tari Topeng</td>
+            <td>Rokhman</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Tari jaipong</td>
+            <td>Rokhim</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Tari Merak</td>
+            <td>Afifah</td>
+	</tr>
+	<tr>
+            <td>MINGGU</td>
+            <td>17.00-18.00</td>
+            <td>Tari Piring</td>
+            <td>Rokhman</td>
+			</tr>
+	</tr>
+	<tr>
+            <td></td>
+            <td></td>
+            <td>Tari Dayak</td>
+            <td>Rokhim</td>
+			</tr>
+	</tr>
+	<tr>
+            <td></td>
+            <td></td>
+            <td>Tari Bali</td>
+            <td>Azizah</td>
+				
+    </table>
+</body>
 </section>
 <!-- About-->
 <section class="page-section" id="about">
