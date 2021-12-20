@@ -21,4 +21,9 @@ class LandingController extends Controller
     {
         return view("pengunjung/login");
     }
+
+    public function kategori()
+    {
+        return view("/pengunjung/kategori");
+    }
 }

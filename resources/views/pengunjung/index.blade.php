@@ -3,11 +3,11 @@
 @section("page_content")
 
 <header class="masthead">
-	<div class="container">
-		<div class="masthead-subheading">Welcome To Our Studio!</div>
-		<div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-		<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-	</div>
+    <div class="container">
+        <div class="masthead-subheading">Sanggar Tari Melati Ayu</div>
+        <div class="masthead-heading text-uppercase">Traditional Dance Vibe</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+    </div>
 </header>
 <!-- Services-->
 <section class="page-section" id="services">
@@ -35,46 +35,84 @@
 		</div>
 		<div class="col-md-4"> 
 			<span class="fa-stack fa-4x">
-				<i class="fas fa-wallet fa-stack-2x text-primary"></i>
-				<i class="fas fa-wallet fa-stack-2x text-primary"></i>
+				<i class="fas fa-address-book fa-stack-2x text-primary"></i>
+				<i class="fas fa-address-book fa-stack-2x text-primary"></i>
 			</span>
-			<h4 class="my-3">Pembayaran</h4>
-			<p class="text-muted">Sistem dalam pembayarannya bisa menggunakan Bayar Langsung di tempat atau melalui transfer.</p>
+			<h4 class="my-3">Pendaftaran</h4>
+			<p class="text-muted">Pendaftaran adalah proses penerimaan murid dan pertanyaan seputar identitas murid yang ingin mendaftar pada sanggar tari melati</p>
 		</div>
 	</div>
 </div>
 </section>
-<section>
-	<div>
+<section class="content-header">
+	<div class="container">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="section-heading text-uppercase">PENCAPAIAN PRESTASI</h2>
+			<h3 class="section-subheading text-muted">Pencapaian Prestasi Sanggar Tari Melati Ayu</h3>
+		</div>
+		<br>
 		<div>
-		rokhman dan rokhim pada tanggal : 20 april 2007 dan sudah terdaftar di kantor dispora budpar indramayu dengan nomer izin: 431.2/111/DPOKP-IPOK/2010 yang dikeluarkan pada tanggal 9 Desember 2010. Sanggar melati ayu mengajarkan tari daerah nusantara.
+		Rokhman dan Rokhim pada tanggal : 20 april 2007 dan sudah terdaftar di kantor dispora budpar indramayu dengan nomer izin: 431.2/111/DPOKP-IPOK/2010 yang dikeluarkan pada tanggal 9 Desember 2010. Sanggar melati ayu mengajarkan tari daerah nusantara.
 sanggar melati ayu indramayu
-Adapun penghargaan yang pernah di terima adalah :
+adapun penghargaan yang pernah di terima adalah :
 <div>
+<br>
 1. Penghargaan Festival Nusa Bali tahun 2002
 </div>
 <div>
 2. Penghargaan International University Student Conference, 17 Februari 2003 di Bandung
 </div>
 <div>
+<div></div>
 3. Penghargaan Pembukaan Pekan Olah Raga Daerah IX, April 2003
 </div>
 <div>	
 </div>
-2. Penghargaan International University Student Conference, 17 Februari 2003 di Bandung
-3. Penghargaan Pembukaan Pekan Olah Raga Daerah IX, April 2003
 4. Penghargaan Pertamina dalam rangka konvensi mutu II UP VI, tanggal 17 September 2003
+<div>
+</div>
+<div>
 5. Penghargaan Pagelaran Karawitan movatif dari Dewan Kesenian Indramayu, tanggal 6 Maret 2004
+</div>
+<div>
+</div>
 6. Penghargaan Pameran Industri Pers tahun 2007 di Jakarta
+<div>
+</div>
+<div>
 7. Penghargaan Pertamina dalam rangka peresmian kilang langit biru, tahun 2007
+<div>
+<div>
+</div>
 8. Penghargaan Bakti Sosial Seni Budaya dari Dewan Kesenian Indramayu pada tahun 2011
+<div>
+<div>
+</div>
 9. Penghargaan dari Kelompok Penggiat Seni Cirebon atau KPSC, 20 mei 2011
+<div>
+ <div>
+</div>
 10. Penghargaan Lawung Motekar dari Kepala Dinas Pariwisata  Dan Kebudayaan Propinsi Jawa Barat,10 Desember 2011
+<div>
+</div>
+</div>
 11. Penghargaan ISI Solo dalam rangka Hari Tari Dunia, 29 April 2012
+<div>
+</div>
+</div>
 12. Penghargaan ISI Jogjakarta dalam rangka Sepatu Menari, Mei 2012
+<div>
+</div>
+</div>
 13. Penghargaan UPI Bandung dalam rangka Makalangan Tari Kreasi yang berbasis Tari Daerah tahun 2013
+<div>
+</div>
+</div>
 14. ISI Solo Dalam rangka Hari Tari Dunia, 29 April 2014
-		</div>
+<div>
+</div>
+</div>
 	</div>
 </section>
 <!-- About-->
@@ -91,7 +129,7 @@ Adapun penghargaan yang pernah di terima adalah :
 					<div class="timeline-heading">
 						<h4 class="subheading">Aplikasi Sanggar Tari</h4>
 					</div>
-					<div class="timeline-body"><p class="text-muted">Aplikasi sanggar tari adalah aplikasi yang menangani pengelolaan data murid, pelatih, jadwal, penyewaan,dan transaksi yang ada di dalam sanggar tari. </p></div>
+					<div class="timeline-body"><p class="text-muted">Aplikasi sanggar tari adalah aplikasi yang menangani pengelolaan data murid, pelatih, jadwal, pendaftaran dan event. </p></div>
 				</div>
 			</li>
 			<li class="timeline-inverted">
@@ -144,7 +182,7 @@ Adapun penghargaan yang pernah di terima adalah :
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="{{ url('/landing') }}/assets/img/team/1.jpg" alt="..." />
+					<img class="mx-auto rounded-circle" src="{{ url('/landing') }}/assets/img/team/adria.jpeg" alt="..." />
 					<h4>Adria Tisnawati Aprilia</h4>
 					<p class="text-muted"></p>
 					<a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -174,7 +212,7 @@ Adapun penghargaan yang pernah di terima adalah :
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Aplikasi sanggar tari adalah aplikasi yang menangani pengelolaan data murid, pelatih, jadwal, penyewaan, dan transaksi yang ada di dalam sanggar tari.  </p></div>
+			<div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Aplikasi sanggar tari melati ayu adalah aplikasi yang menangani pengelolaan data murid, pelatih, jadwal,pendaftaran dan event.  </p></div>
 		</div>
 	</div>
 </section>

@@ -30,6 +30,7 @@ use App\Http\Controllers\FormController;
 Route::get("/template_pengunjung", [LandingController::class, "template_pengunjung"]);
 Route::get("/", [LandingController::class, "index"]);
 Route::get("/login", [LandingController::class, "login"]);
+Route::get("/pengunjung/kategori", [LandingController::class, "kategori"]);
 // login adminController
 
 Route::group(["middleware" => ["guest"]], function() {
