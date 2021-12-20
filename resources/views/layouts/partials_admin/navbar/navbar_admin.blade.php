@@ -49,7 +49,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="fas fa-bars"></i>
                 <p>
                   Menu
                   <i class="fas fa-angle-left right"></i>
@@ -58,103 +58,48 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="{{ url('/admin/form/') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     <p>Form Pengunjung</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url('/admin/kategori_tari/') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-tasks"></i>
                     <p>Kategori Tari</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url('/admin/pelatih/') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <p>Pelatih</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url('/admin/pelatih_kategori_tari/') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-male" aria-hidden="true"></i>
                     <p>Pelatih Kategori Tari</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="/admin/murid" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <p>Murid</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ url('/admin/kemampuan/') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Kemampuan</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
               <a href="{{ url('/admin/full-calender/') }}" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
                 <p>
                   Event
-                  <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
-            </li>
-            <li class="nav-header">Penilaian</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                  Nilai Murid
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/layout/top-nav.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Nilai</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-header">Report</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                  Laporan
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{ url('/admin/laporan/data_absen') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Laporan Data Absen</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fas fa-circle nav-icon"></i>
-                    <p>Laporan Data Penyewaan</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fas fa-circle nav-icon"></i>
-                    <p>Laporan Data Nilai Murid</p>
-                  </a>
-                </li>
-              </ul>
             </li>
             <li class="nav-header">Akun</li>
             <li class="nav-item">
               <a href="{{ url('/admin/users') }}" class="nav-link">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-users" aria-hidden="true"></i>
                 <p>
                   Users
                 </p>
@@ -162,7 +107,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ url('/admin/role/') }}" class="nav-link">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <p>
                   Role
                 </p>

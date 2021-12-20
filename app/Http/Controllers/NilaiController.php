@@ -18,13 +18,15 @@ class NilaiController extends Controller
         return view("/pelatih/nilai/data_nilai", $data);
     }
 
-    public function data_nilai()
+    public function detail_nilai($id)
     {
         $data = [
-            "data_nilai" => Nilai::orderBy("id_murid", "ASC")->get()
+            "detail" => Murid::where("id", $id)->orderBy("nama_murid", "DESC")->first(),
+            "data_kategori_tari" => KategoriTari::get(),
+            "data_nilai" => Nilai::where("id_murid", $id)->get()
         ];
 
-        return view("/pelatih/nilai/detail_keseluruhan", $data);
+        return view("/pelatih/nilai/data_nilai_murid", $data);
     }
 
 

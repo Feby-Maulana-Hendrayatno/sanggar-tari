@@ -24,11 +24,12 @@
     $('.select2').select2(),
     $('.select3').select2(),
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": true, "autoWidth": false
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": false,
       "ordering": true,
       "info": true,
