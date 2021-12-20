@@ -15,7 +15,7 @@ class CreateNilaiTable extends Migration
     {
         Schema::create('nilai', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_murid", 255)->nullable();
+            $table->string("id_murid", 255)->nullable();
             $table->string("jenis_tari", 255)->nullable();
             $table->string("nilai", 255)->nullable();
         });

@@ -44,104 +44,36 @@
 	</div>
 </div>
 </section>
-<!-- Portfolio Grid-->
-<section class="page-section bg-light" id="portfolio">
-	<div class="container">
-		<div class="text-center">
-			<h2 class="section-heading text-uppercase">Kategori</h2>
-			<h3 class="section-subheading text-muted">Traditional Dance Vibe</h3>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-sm-6 mb-4">
-				<!-- Portfolio item 1-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/bali.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Bali</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Bali</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 mb-4">
-				<!-- Portfolio item 2-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/dayak.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Dayak</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Dayak</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 mb-4">
-				<!-- Portfolio item 3-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/jaipong.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Jaipong</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Jaipong</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-				<!-- Portfolio item 4-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/merak2.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Merak</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Merak</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-				<!-- Portfolio item 5-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/tari piring.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Piring</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Piring</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6">
-				<!-- Portfolio item 6-->
-				<div class="portfolio-item">
-					<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-						</div>
-						<img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/topeng.jpg" alt="..." />
-					</a>
-					<div class="portfolio-caption">
-						<div class="portfolio-caption-heading">Tari Topeng</div>
-						<div class="portfolio-caption-subheading text-muted">Tari Topeng</div>
-					</div>
-				</div>
-			</div>
+<section>
+	<div>
+		<div>
+		rokhman dan rokhim pada tanggal : 20 april 2007 dan sudah terdaftar di kantor dispora budpar indramayu dengan nomer izin: 431.2/111/DPOKP-IPOK/2010 yang dikeluarkan pada tanggal 9 Desember 2010. Sanggar melati ayu mengajarkan tari daerah nusantara.
+sanggar melati ayu indramayu
+Adapun penghargaan yang pernah di terima adalah :
+<div>
+1. Penghargaan Festival Nusa Bali tahun 2002
+</div>
+<div>
+2. Penghargaan International University Student Conference, 17 Februari 2003 di Bandung
+</div>
+<div>
+3. Penghargaan Pembukaan Pekan Olah Raga Daerah IX, April 2003
+</div>
+<div>	
+</div>
+2. Penghargaan International University Student Conference, 17 Februari 2003 di Bandung
+3. Penghargaan Pembukaan Pekan Olah Raga Daerah IX, April 2003
+4. Penghargaan Pertamina dalam rangka konvensi mutu II UP VI, tanggal 17 September 2003
+5. Penghargaan Pagelaran Karawitan movatif dari Dewan Kesenian Indramayu, tanggal 6 Maret 2004
+6. Penghargaan Pameran Industri Pers tahun 2007 di Jakarta
+7. Penghargaan Pertamina dalam rangka peresmian kilang langit biru, tahun 2007
+8. Penghargaan Bakti Sosial Seni Budaya dari Dewan Kesenian Indramayu pada tahun 2011
+9. Penghargaan dari Kelompok Penggiat Seni Cirebon atau KPSC, 20 mei 2011
+10. Penghargaan Lawung Motekar dari Kepala Dinas Pariwisata  Dan Kebudayaan Propinsi Jawa Barat,10 Desember 2011
+11. Penghargaan ISI Solo dalam rangka Hari Tari Dunia, 29 April 2012
+12. Penghargaan ISI Jogjakarta dalam rangka Sepatu Menari, Mei 2012
+13. Penghargaan UPI Bandung dalam rangka Makalangan Tari Kreasi yang berbasis Tari Daerah tahun 2013
+14. ISI Solo Dalam rangka Hari Tari Dunia, 29 April 2014
 		</div>
 	</div>
 </section>
@@ -246,4 +178,5 @@
 		</div>
 	</div>
 </section>
+
 @endsection
