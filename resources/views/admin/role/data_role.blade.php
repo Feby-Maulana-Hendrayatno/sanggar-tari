@@ -24,6 +24,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="value" class="col-sm-2 col-form-label">value</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="id_role" name="id_role" placeholder="id_role">
+                        </div>
+                    </div>
+                </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info btn-sm">
                         <span class="fa fa-plus"></span>
@@ -50,6 +58,7 @@
                         <tr>
                             <th class="text-center">No</th>
                             <th class="text-center">Role</th>
+                            <th class="text-center">Value</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -59,8 +68,9 @@
                         <tr>
                             <td class="text-center">{{ ++$no }}.</td>
                             <td class="text-center">{{ $role->nama_role }}</td>
+                            <td class="text-center">{{ $role->id_role }}</td>
                             <td class="text-center">
-                                <a href="{{ url('/admin/role/edit') }}/{{ $role->id_role }}" class="btn btn-warning btn-sm">
+                                <a href="{{ url('/admin/role/edit') }}/{{ $role->id }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
                                 <form method="POST" action="{{ url('/admin/role/hapus') }}" style="display: inline;">

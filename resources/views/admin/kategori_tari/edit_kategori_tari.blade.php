@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="nama_kategori_tari"> Kategori Tari </label>
-                        <input type="text" class="form-control" id="nama_kategori_tari" name="nama_kategori_tari" placeholder="Masukkan Kategori Tari" value="{{ $edit->nama_kategori_tari }}">
+                        <input required type="text" class="form-control" id="nama_kategori_tari" name="nama_kategori_tari" placeholder="Masukkan Kategori Tari" value="{{ $edit->nama_kategori_tari }}">
                     </div>
                 </div>
                 <div class="card-footer">

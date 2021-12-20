@@ -15,13 +15,13 @@ class PelatihMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $guard = NULL)
     {
         //return $next($request);
         if(Auth::guard($guard)->check()){
             return $next($request);
         }
 
-        return redirect("/login");
+        return redirect("/admin/login");
     }
 }

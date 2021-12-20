@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nomer Handphone</label>
-                                <input type="" name="no_hp" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->no_hp }}" required>
+                                <input type="" name="no_hp" class="form-control" id="" placeholder="nomor handphone" value="{{ $edit->no_hp }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>

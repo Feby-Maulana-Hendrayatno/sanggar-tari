@@ -18,14 +18,46 @@ class UserSeeder extends Seeder
     {
     	$faker = Faker::create('id_ID');
 
-    	for ($i = 1; $i <= 10; $i++)
-    	{
-    		User::create([
-    			"name" => $faker->firstname,
-    			"email" => $faker->email,
-    			"password" => bcrypt("login123"),
-    			"id_role" => 1
-    		]);
-    	}
+    	User::create([
+			"name" => "admin",
+			"email" => "admin@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 1
+		]);
+		
+		User::create([
+			"name" => "pelatih",
+			"email" => "pelatih@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 2
+		]);
+
+		User::create([
+			"name" => "pelatih2",
+			"email" => "pelatih2@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 2
+		]);
+
+		User::create([
+			"name" => "pelatih3",
+			"email" => "pelatih3@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 2
+		]);
+
+		User::create([
+			"name" => "pelatih4",
+			"email" => "pelatih4@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 2
+		]);
+
+		User::create([
+			"name" => "murid",
+			"email" => "murid@gmail.com",
+			"password" => bcrypt("password"),
+			"id_role" => 3
+		]);
     }
 }

@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="POST" action="{{ url('/admin/role/simpan/') }}">
-            {{ csrf_field() }}
+            {{ csrf_field() }}  
             <input type="hidden" name="id_role" value="{{ $edit->id_role }}">
             <div class="card card-info">
                 <div class="card-header">
@@ -18,6 +18,14 @@
                         <label for="nama_role" class="col-sm-2 col-form-label">Role</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nama_role" name="nama_role" placeholder="Role" value="{{ $edit->nama_role }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="value" class="col-sm-2 col-form-label">Id</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="id_role" name="id_role" placeholder="id_role" value="{{ $edit->id_role }}">
                         </div>
                     </div>
                 </div>
@@ -47,6 +55,7 @@
                         <tr>
                             <th class="text-center">No</th>
                             <th class="text-center">Role</th>
+                            <th class="text-center">Id</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -56,6 +65,7 @@
                         <tr>
                             <td class="text-center">{{ ++$no }}.</td>
                             <td class="text-center">{{ $role->nama_role }}</td>
+                            <td class="text-center">{{ $role->id_role }}</td>
                             <td class="text-center">
                                 <a href="{{ url('/admin/role/edit') }}/{{ $role->id_role }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>

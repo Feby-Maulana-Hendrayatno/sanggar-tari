@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="id_kategori"> Kategori Tari </label>
-                        <select class="form-control select2bs4" style="width: 100%;" name="id_kategori">
+                        <select required class="form-control select2bs4" style="width: 100%;" name="id_kategori">
                             <option value="">- Pilih -</option>
                             @foreach($data_kategori as $kategori_tari)
                                 @if($edit->id_kategori == $kategori_tari->id)
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="id_kategori"> Pelatih </label>
-                        <select class="form-control select2bs4" style="width: 100%;" name="id_pelatih">
+                        <select required class="form-control select2bs4" style="width: 100%;" name="id_pelatih">
                             <option value="">- Pilih -</option>
                             @foreach($data_pelatih as $pelatih)
                                 @if($edit->id_pelatih == $pelatih->id)

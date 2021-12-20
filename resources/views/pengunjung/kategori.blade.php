@@ -16,7 +16,7 @@
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/bali.jpg" height="100px" width="10000px" />
+                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/bali.jpg" height="600px" width="10000px" />
                     </a>
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">Tari Bali</div>
@@ -31,13 +31,12 @@
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/dayak.jpg" height="100px" width="880px" />
+                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/dayak.jpg" height="200px" width="10000px"  />
                     </a>
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">Tari Dayak</div>
                         <div class="portfolio-caption-subheading text-muted">Tari Dayak</div>
                     </div>
-                    <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/tari piring.jpg" height="100px" width="880px" />
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 mb-4">
@@ -59,49 +58,50 @@
             <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                 <!-- Portfolio item 4-->
                 <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/.jpg" height="200px" width="10000px" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Tari Merak</div>
-                        <div class="portfolio-caption-subheading text-muted">Tari Merak</div>
+                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
+                    <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/merak2.jpg" height="200px" width="10000px"  />
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Tari Merak</div>
+                    <div class="portfolio-caption-subheading text-muted">Tari Merak</div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <!-- Portfolio item 5-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/tari piring.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Tari Piring</div>
-                        <div class="portfolio-caption-subheading text-muted">Tari Piring</div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 5-->
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
+                    <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/topeng.jpg" height="800px" width="10000px"  />
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Tari Topeng</div>
+                    <div class="portfolio-caption-subheading text-muted">Tari Topeng</div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <!-- Portfolio item 6-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/topeng.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Tari Topeng</div>
-                        <div class="portfolio-caption-subheading text-muted">Tari Topeng</div>
-                        <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/topeng.jpg" height="200px" width="10000px" />
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 6-->
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
+                    <img class="img-fluid" src="{{ url('/landing') }}/assets/img/portfolio/tari piring.jpg" height="200px" width="10000px"  />
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Tari Piring</div>
+                    <div class="portfolio-caption-subheading text-muted">Tari Piring</div>
+                    
                 </div>
             </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
         </div>
     </div>
 </section>

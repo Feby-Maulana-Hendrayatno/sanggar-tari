@@ -14,15 +14,30 @@ class LoginController extends Controller
 
     public function post_login(Request $request)
     {
-        if(Auth::attempt([
-        "email" =>$request->email,
-        "password" => $request->password
+        if(Auth::attempt(["email" =>$request->email,"password" => $request->password
         ])) {
             $request->session()->regenerate();
 
-            return redirect()->intended("/admin/dashboard");
-        }else{
+            $data = auth()->user()->id_role;
+
+            if ($data == 1) {
+
+                return redirect("/admin/dashboard");
+
+            } else if ($data == 2) {
+
+                return redirect("/pelatih/dashboard");
+
+            } else if ($data == 3) {
+
+                return redirect("/");
+
+            }
+
+        } else {
+
             return redirect()->back();
+
         }
     }
 

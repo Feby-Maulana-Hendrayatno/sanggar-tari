@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                        <img src="{{ url('/landing') }}/assets/img/sanggartari.jpg" width="700px" height="340px" alt="..." />
+                        <img src="{{ url('/landing') }}/assets/img/sanggartari.jpg" width="550px" height="340px" alt="..." />
                         </div>
                     </div>
                 </div>

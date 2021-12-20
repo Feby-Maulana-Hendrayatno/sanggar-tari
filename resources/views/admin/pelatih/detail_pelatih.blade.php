@@ -31,7 +31,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-					<a href="{{ url('/admin/murid/') }}">
+					<a href="{{ url('/admin/pelatih/') }}">
 						<h3 class="card-title">
 							<span class="btn btn-secondary col fileinput-button dz-clickable">
                                 <i class="fa fa-reply"></i>

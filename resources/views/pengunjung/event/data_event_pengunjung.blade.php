@@ -36,8 +36,8 @@ $(document).ready(function () {
 
     var calendar = $('#calendar').fullCalendar({
         events:'/admin/full-calender',
-        selectable:true,
-        selectHelper: true,
+        // selectable:true,
+        // selectHelper: true,
         select:function(start, end, allDay)
         {
             var title = prompt('Event Title:');

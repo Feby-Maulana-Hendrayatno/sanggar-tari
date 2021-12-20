@@ -7,6 +7,7 @@ use App\Models\Pelatih;
 use File;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PelatihKategoriTari;
 
 class PelatihController extends Controller
 {
@@ -158,6 +159,9 @@ class PelatihController extends Controller
         Pelatih::where("id", $request->id)->delete();
 
         User::where("name", $nama_pelatih)->delete();
+
+        $id_pelatih = $data->id_pelatih;
+        PelatihKategoriTari::where("id_pelatih", $id_pelatih)->delete();
 
         return redirect()->back();
     }

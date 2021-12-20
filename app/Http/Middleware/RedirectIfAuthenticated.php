@@ -22,6 +22,8 @@ class RedirectIfAuthenticated
         //return $next($request);
         if(Auth::guard($guard)->check()){
             return redirect("/admin/dashboard");
+        } else if (Auth::guard($guard)->check()) {
+            return redirect("/pelatih/dashboard");
         }
 
         return $next($request);

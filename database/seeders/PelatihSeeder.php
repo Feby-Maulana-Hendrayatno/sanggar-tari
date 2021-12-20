@@ -27,6 +27,8 @@ class PelatihSeeder extends Seeder
         		"alamat" => $faker->address,
         		"foto" => NULL
         	]);
+
+            
         }
     }
 }

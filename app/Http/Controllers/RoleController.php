@@ -33,8 +33,8 @@ class RoleController extends Controller
     public function edit($id_role)
     {
         $data = [
-            "edit" => Role::where("id_role", $id_role)->first(),
-            "data_role" => Role::where("id_role", "!=", $id_role)->orderBy("nama_role", "ASC")->get()
+            "edit" => Role::where("id", $id_role)->first(),
+            "data_role" => Role::where("id", "!=", $id_role)->orderBy("nama_role", "ASC")->get()
         ];
 
         return view("/admin/role/edit_role", $data);
@@ -43,10 +43,10 @@ class RoleController extends Controller
     public function simpan(Request $request)
     {
         Role::where("id_role", $request->id_role)->update([
-            "nama_role" => $request->nama_role
+            "nama_role" => $request->nama_role,
+            "id_role" => $request->id_role
         ]);
 
         return redirect("/admin/role");
     }
 }
-    

@@ -129,38 +129,44 @@ Route::group(["middleware" => ["admin"]], function() {
 
 });
 
-Route::prefix("pelatih")->group(function() {
+Route::group(["middleware" => ["pelatih"]], function() {
 
-    Route::get("/template_pelatih", [AppController::class, "template_pelatih"]);
+    Route::prefix("pelatih")->group(function() {
 
-    Route::get("/", [AppController::class, "dashboard"]);
-    Route::get("/dashboard", [AppController::class, "dashboard"]);
-
-    Route::prefix("nilai")->group(function() {
-        Route::get("/", [NilaiController::class, "index"]);
-        Route::get("/detail_nilai/{id}", [NilaiController::class, "detail_nilai"]);
-        Route::post("/tambah/", [NilaiController::class, "tambah"]);
-        Route::post("/hapus", [NilaiController::class, "hapus"]);
-        Route::get("/edit", [NilaiController::class, "edit"]);
-        Route::get("/detail/{id}", [NilaiController::class, "detail"]);
-        Route::post("/simpan", [NilaiController::class, "simpan"]);
-    });
-
-    Route::prefix("absen")->group(function() {
-        Route::get("/hari_ini", [AbsenController::class, "hari_ini"]);
-        Route::post("/tambah_absen_hari_ini/", [AbsenController::class, "tambah_absen_hari_ini"]);
-
-        Route::get("/pertanggal", [AbsenController::class, "pertanggal"]);
-        Route::post("/tambah_absen_pertanggal", [AbsenController::class, "tambah_absen_pertanggal"]);
-        Route::get("/edit_absen", [AbsenController::class, "edit_absen"]);
-        Route::post("/simpan_data_edit_absen", [AbsenController::class, "simpan_data_edit_absen"]);
-
-        Route::post("/hapus", [AbsenController::class, "hapus"]);
-        Route::get("/edit/{id}", [AbsenController::class, "edit"]);
-        Route::post("/simpan", [AbsenController::class, "simpan"]);
+        Route::get("/template_pelatih", [AppController::class, "template_pelatih"]);
+    
+        Route::get("/", [AppController::class, "dashboard"]);
+        Route::get("/dashboard", [AppController::class, "dashboard"]);
+    
+        Route::prefix("nilai")->group(function() {
+            Route::get("/", [NilaiController::class, "index"]);
+            Route::get("/detail_nilai/{id}", [NilaiController::class, "detail_nilai"]);
+            Route::post("/tambah/", [NilaiController::class, "tambah"]);
+            Route::post("/hapus", [NilaiController::class, "hapus"]);
+            Route::get("/edit", [NilaiController::class, "edit"]);
+            Route::get("/detail/{id}", [NilaiController::class, "detail"]);
+            Route::post("/simpan", [NilaiController::class, "simpan"]);
+        });
+    
+        Route::prefix("absen")->group(function() {
+            Route::get("/hari_ini", [AbsenController::class, "hari_ini"]);
+            Route::post("/tambah_absen_hari_ini/", [AbsenController::class, "tambah_absen_hari_ini"]);
+    
+            Route::get("/pertanggal", [AbsenController::class, "pertanggal"]);
+            Route::post("/tambah_absen_pertanggal", [AbsenController::class, "tambah_absen_pertanggal"]);
+            Route::get("/edit_absen", [AbsenController::class, "edit_absen"]);
+            Route::post("/simpan_data_edit_absen", [AbsenController::class, "simpan_data_edit_absen"]);
+    
+            Route::post("/hapus", [AbsenController::class, "hapus"]);
+            Route::get("/edit/{id}", [AbsenController::class, "edit"]);
+            Route::post("/simpan", [AbsenController::class, "simpan"]);
+        });
+    
     });
 
 });
+
+
 
 
 

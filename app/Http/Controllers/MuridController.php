@@ -169,6 +169,8 @@ class MuridController extends Controller
 
         User::where("name", $nama_murid)->delete();
 
+        
+
         return redirect()->back();
     }
 }
