@@ -164,8 +164,7 @@
       </div>
       <form method="POST" action="{{ url('/pelatih/absen/simpan_data_edit_absen') }}">
         @csrf
-        <div class="modal-body" id="modal-content-edit">
-          
+        <div class="modal-body" id="modal-content-edit">    
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

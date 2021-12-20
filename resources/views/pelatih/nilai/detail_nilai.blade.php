@@ -90,6 +90,9 @@
                             <td class="text-center">{{ $nilai->jenis_tari }}</td>
                             <td class="text-center">{{ $nilai->nilai }}</td>
                             <td class="text-center">
+                                <button onclick="editNilai({{$nilai->id}})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default-edit">
+                                <i class="fa fa-edit"></i> Edit
+                                </button>
                                 <a href="/pelatih/nilai/detail/{{ $nilai->id }}" class="btn btn-success text-white btn-sm">
                                     <i class="fas fa-clipboard"></i> Detail
                                 </a>
@@ -110,5 +113,48 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal-default-edit">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Data</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="{{ url('/pelatih/nilai/simpan') }}">
+        @csrf
+        <div class="modal-body" id="modal-content-edit">    
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
 @endsection
 
+@section("scripts_js")
+
+<script>
+    function editNilai(id)
+    {
+        $.ajax({
+            url : "{{ url('/pelatih/nilai/edit') }}",
+            type : "GET",
+            data : { id : id },
+            success : function(data) {
+                $("#modal-content-edit").html(data);
+                return true;
+            }
+        });
+    }
+</script>
+
+@endsection

@@ -42,14 +42,11 @@ class NilaiController extends Controller
         return redirect()->back();
     }
 
-    public function edit($id)
+    public function edit(Request $request)
     {
 
         $data = [
-            "data_nilai" => Nilai::orderBy("id", "DESC")->get(),
-        	"edit" => Nilai::where("id", $id)->first(),
-        	"data_murid" => Nilai::where("id", "!=", $id)->orderBy("id", "ASC")->get(),
-            "data_kategori_tari" => KategoriTari::where("id", "!=", $id)->orderBy("id", "ASC")->get()
+            "edit" => Nilai::where("id", $request->id)->first()
         ];
 
         return view("/pelatih/nilai/edit_nilai", $data);
@@ -64,11 +61,6 @@ class NilaiController extends Controller
             "data_nilai" => Nilai::where("id_murid", $id)->get()
         ];
 
-
-        // $data = [
-        //     "detail" => Nilai::where("id_murid", $id)->first()
-        // ];
-
         return view("/pelatih/nilai/detail_nilai", $data);
 
 
@@ -77,12 +69,10 @@ class NilaiController extends Controller
     public function simpan(Request $request)
     {
         Nilai::where("id", $request->id)->update([
-            "id" => $request->id,
-            "jenis_tari" => $request->jenis_tari,
             "nilai" => $request->nilai
-
         ]);
 
-        return redirect("/pelatih/nilai");
+        return redirect()->back();
     }
 }
+    

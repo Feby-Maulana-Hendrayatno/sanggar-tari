@@ -140,7 +140,7 @@ Route::prefix("pelatih")->group(function() {
         Route::get("/data_nilai", [NilaiController::class, "data_nilai"]);
         Route::post("/tambah/", [NilaiController::class, "tambah"]);
         Route::post("/hapus", [NilaiController::class, "hapus"]);
-        Route::get("/edit/{id}", [NilaiController::class, "edit"]);
+        Route::get("/edit", [NilaiController::class, "edit"]);
         Route::get("/detail/{id}", [NilaiController::class, "detail"]);
         Route::post("/simpan", [NilaiController::class, "simpan"]);
     });
