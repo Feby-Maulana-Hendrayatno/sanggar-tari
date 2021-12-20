@@ -24,8 +24,8 @@
                     </div>
                     <div class="form-group">
                         <label for="jenis_tari" >Jenis Tari</label>
-                        <select name="jenis_tari" id="jenis_tari" class="form-control">
-                        <option > - Jenis Tari - </option>
+                        <select name="jenis_tari" id="jenis_tari" class="form-control" required>
+                        <option disabled required>  Jenis Tari  </option>
                         @foreach ($data_kategori_tari as $tari)
                             <?php
                                 $data_tari = DB::table("nilai")
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nilai" >Nilai</label>
-                        <input type="text" class="form-control" id="nilai" name="nilai" placeholder="Nilai">
+                        <input type="text" class="form-control" id="nilai" name="nilai" placeholder="Nilai" required>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -63,7 +63,7 @@
         </form>
     </div>
     <div class="col-md-8">
-        <div class="card card-info">
+        <div class="card ">
             <div class="card-header">
                 <h3 class="card-title">
                     Data Nilai
@@ -93,14 +93,11 @@
                                 <button onclick="editNilai({{$nilai->id}})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default-edit">
                                 <i class="fa fa-edit"></i> Edit
                                 </button>
-                                <a href="/pelatih/nilai/detail/{{ $nilai->id }}" class="btn btn-success text-white btn-sm">
-                                    <i class="fas fa-clipboard"></i> Detail
-                                </a>
                                 <form method="POST" action="{{ url('/pelatih/nilai/hapus') }}" style="display: inline;">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $nilai->id }}">
-                                    <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
-                                        <span class="fa fa-trash"></span>
+                                    <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm" >
+                                        <span class="fa fa-trash"> Hapus </span>
                                     </button>
                                 </form>
                             </td>
@@ -157,4 +154,10 @@
     }
 </script>
 
+
+
 @endsection
+
+
+
+

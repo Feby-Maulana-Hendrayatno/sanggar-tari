@@ -4,7 +4,7 @@
     <img src="/template/dist/img/SanggarTari.png" alt="SanggarTari" class="brand-image img-circle elevation-3" style="opacity: .8" width="35" height="40">
     <span class="brand-text font-weight-light">Sanggar Tari Melati</span>
   </a>
-
+  
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->

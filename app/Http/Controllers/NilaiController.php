@@ -69,6 +69,7 @@ class NilaiController extends Controller
     public function simpan(Request $request)
     {
         Nilai::where("id", $request->id)->update([
+            "jenis_tari" => $request->jenis_tari,
             "nilai" => $request->nilai
         ]);
 
