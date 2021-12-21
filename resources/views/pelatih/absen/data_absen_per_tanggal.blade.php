@@ -108,7 +108,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="id_murid"> Nama Murid </label>
-                <select class="form-control select2" id="id_murid" name="id_murid" style="width: 100%;">
+                <select required class="form-control select2" id="id_murid" name="id_murid" style="width: 100%;">
                   <option value="">- Pilih -</option>
                   @foreach($data_murid as $murid)
                   <option value="{{ $murid->id }}">
@@ -121,7 +121,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="status"> Status </label>
-                <select class="form-control" id="status" name="status">
+                <select required  class="form-control" id="status" name="status">
                   <option value="">- Pilih -</option>
                   <option value="1">Hadir</option>
                   <option value="2">Sakit</option>
@@ -133,7 +133,7 @@
           </div>
           <div class="form-group">
             <label for="tanggal"> Tanggal </label>
-            <input type="date" class="form-control" id="tanggal" name="tanggal">
+            <input required type="date" class="form-control" id="tanggal" name="tanggal">
           </div>
           <div class="form-group">
             <label for="keterangan"> Keterangan </label>

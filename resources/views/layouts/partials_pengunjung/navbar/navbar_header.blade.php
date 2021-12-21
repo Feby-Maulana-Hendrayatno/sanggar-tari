@@ -13,9 +13,15 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/kategori/') }}">Kategori</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/form/store') }}">Form</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/full-calender/') }}">Events</a></li>
+                
+                @if(empty(auth()->user()->name))
+                {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/admin/login') }}"> Login </a></li> --}}
                 <li class="nav-item"><a class="nav-link" href="{{ url('/admin/login') }}"> Login </a></li>
+                @else
+                <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/full-calender/') }}">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/admin/logout') }}"> Logout </a></li>
+                @endif
+                
             </ul>
         </div>
     </div>

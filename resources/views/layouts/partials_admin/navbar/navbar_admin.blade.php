@@ -44,6 +44,7 @@
                 </p>
               </a>
             </li>
+            <br>
             <li class="nav-header">
               Daftar Menu
             </li>
@@ -96,6 +97,7 @@
                 </p>
               </a>
             </li>
+            <br>
             <li class="nav-header">Akun</li>
             <li class="nav-item">
               <a href="{{ url('/admin/users') }}" class="nav-link">
@@ -105,14 +107,14 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ url('/admin/role/') }}" class="nav-link">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <p>
                   Role
                 </p>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

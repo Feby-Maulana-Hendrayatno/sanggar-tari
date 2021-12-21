@@ -7,7 +7,7 @@ use App\Models\Pelatih;
 use File;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
-use App\Models\PelatihKategoriTari;
+// use App\Models\PelatihKategoriTari;
 
 class PelatihController extends Controller
 {
@@ -74,7 +74,7 @@ class PelatihController extends Controller
             "name" => $request->nama_pelatih,
             "email" => $request->nama_pelatih."@gmail.com",
             "password" => bcrypt("pelatih"),
-            "id_role" => 1
+            "id_role" => 2
         ]);
 
 
@@ -160,8 +160,7 @@ class PelatihController extends Controller
 
         User::where("name", $nama_pelatih)->delete();
 
-        $id_pelatih = $data->id_pelatih;
-        PelatihKategoriTari::where("id_pelatih", $id_pelatih)->delete();
+        // PelatihKategoriTari::where("id_pelatih", $id_pelatih)->delete();
 
         return redirect()->back();
     }

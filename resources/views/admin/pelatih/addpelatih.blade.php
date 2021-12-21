@@ -1,7 +1,11 @@
 @extends("layouts.template")
 
 @section("ajax_calendar_js")
-
+Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
 <script>
     function viewImage()
     {

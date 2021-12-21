@@ -70,7 +70,7 @@ class MuridController extends Controller
             "name" => $request->nama_murid,
             "email" => $request->nama_murid."@gmail.com",
             "password" => bcrypt("murid"),
-            "id_role" => 1
+            "id_role" => 3
         ]);
 
 
